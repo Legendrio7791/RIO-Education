@@ -1,0 +1,445 @@
+<html>
+<head>
+<title>CSS Properties Explanation</title>
+<link rel="icon" href="Logo.png" type="image/png">
+<style>
+Table{background-repeat:no-repeat}
+A:link{color:red;display:inline-block;text-decoration:none}
+A:hover{color:Aqua;}
+TD{
+      padding-left:45px;
+      padding-top:15px;
+}
+TR{
+      padding-left:45px;
+      padding-top:15px;
+}
+ 
+p{padding-left:15px} 
+
+h2{
+      font-family: 'Arial';
+      font-size: 20px;
+} 
+
+ body {
+      background-image: url('education11.jpeg');
+      background-repeat:repeat;
+      background-size: contain;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    
+    @keyframes zooming {
+      0% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+      50% {
+        transform: translate(15%, 7%) scale(1.2); opacity:1;
+      }
+      
+      100% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+
+    }
+    .sticker-HTML img {
+      height: 100%;
+    }
+
+
+    
+
+    .sticker-HTML {
+      position: fixed;
+      bottom: 50px;
+      left: 15px;
+      height: 70px;
+      animation: zooming 4s infinite;
+    }
+
+
+    .CSS-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.20);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 14px;
+      line-height: 15px;
+      color: white;
+      text-decoration: none;
+    }
+    .CSS {
+      display: inline-block;
+      width: 1200px;
+      height: 150px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .sticker {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 100px;
+    }
+
+    .sticker img {
+      height: 100%;
+    }
+
+
+
+:root {
+	--hue: 55;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
+	--primary-l: hsl(var(--hue),90%,65%);
+	--primary-d: hsl(var(--hue),90%,45%);
+	--white: hsl(var(--hue),10%,100%);
+	--white-d: hsl(var(--hue),10%,45%);
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body {
+	display: grid;
+	place-items: center;
+}
+.book,
+.book__pg-shadow,
+.book__pg {
+	animation: cover 7s ease-in-out infinite;
+}
+.book {
+	background-color: var(--primary-l);
+	border-radius: 0.25em;
+	box-shadow:
+		0 0.25em 0.5em hsla(0,0%,0%,0.3),
+		0 0 0 0.25em var(--primary) inset;
+	padding: 0.25em;
+	perspective: 37.5em;
+	position: relative;
+	width: 8em;
+	height: 6em;
+	transform: translate3d(0,0,0);
+	transform-style: preserve-3d;
+}
+.book__pg-shadow,
+.book__pg {
+	position: absolute;
+	left: 0.25em;
+	width: calc(50% - 0.25em);
+}
+.book__pg-shadow {
+	animation-name: shadow;
+	background-image: linear-gradient(-45deg,hsla(0,0%,0%,0) 50%,hsla(0,0%,0%,0.3) 50%);
+	filter: blur(0.25em);
+	top: calc(100% - 0.25em);
+	height: 3.75em;
+	transform: scaleY(0);
+	transform-origin: 100% 0%;
+}
+.book__pg {
+	animation-name: pg1;
+	background-color: var(--white);
+	background-image: linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	height: calc(100% - 0.5em);
+	transform-origin: 100% 50%;
+}
+.book__pg--2,
+.book__pg--3,
+.book__pg--4 {
+	background-image:
+		repeating-linear-gradient(hsl(var(--hue),10%,10%) 0 0.125em,hsla(var(--hue),10%,10%,0) 0.125em 0.5em),
+		linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 2.5em 4.125em, 100% 100%;
+}
+.book__pg--2 {
+	animation-name: pg2;
+}
+.book__pg--3 {
+	animation-name: pg3;
+}
+.book__pg--4 {
+	animation-name: pg4;
+}
+.book__pg--5 {
+	animation-name: pg5;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,30%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+}
+
+/* Animations */
+@keyframes cover {
+	from, 5%, 45%, 55%, 95%, to {
+		animation-timing-function: ease-out;
+		background-color: var(--primary-l);
+	}
+	10%, 40%, 60%, 90% {
+		animation-timing-function: ease-in;
+		background-color: var(--primary-d);
+	}
+}
+@keyframes shadow {
+	from, 10.01%, 20.01%, 30.01%, 40.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0.2) rotateY(90deg);
+	}
+	10%, 20%, 30%, 40%, 50%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	50.01%, 60.01%, 70.01%, 80.01%, 90.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	60%, 70%, 80%, 90%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+}
+@keyframes pg1 {
+	from, to {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.4deg);
+	}
+	10%, 15% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	20%, 80% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	85%, 90% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+}
+@keyframes pg2 {
+	from, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	5%, 10% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	20%, 25% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	30%, 70% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	75%, 80% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	90%, 95% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+}
+@keyframes pg3 {
+	from, 10%, 90%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	15%, 20% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	30%, 35% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	40%, 60% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	65%, 70% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	80%, 85% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+}
+@keyframes pg4 {
+	from, 20%, 80%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	25%, 30% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	40%, 45% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	50% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	55%, 60% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	70%, 75% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+}
+@keyframes pg5 {
+	from, 30%, 70%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+	35%, 40% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0deg);
+	}
+	50% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.6deg);
+	}
+	60%, 65% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+}
+
+</style>
+</head>
+
+<body bgcolor="white" Link="red" vlink="red" alink="fuchsia">
+<Table width="100%" height=5 bgcolor="black">
+<TR><TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="right"><Img src="phone.jpeg" align="bottom" width=25 height=25>&nbsp9935025968</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" color="white" size=2>
+<p align="right"><A href="https://www.facebook.com"><Img src="facebook.jpeg" align="bottom" width=25 height=25>&nbsp&nbsp&nbsp&nbsp</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" size=2>
+<p align="left"><A href="https://www.gmail.com"><Img src="gmail.jpeg" align="bottom" width=30 height=30>&nbsp</p>
+</TD>
+</font>
+</TR></Table>
+<HR>
+<Table width="100%" height=35 bgcolor="black">
+<TR>
+<TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="left"><Img src="top-logo.jpeg" align="bottom" width=100 height=90></p>
+</TD>
+<TD width="100%" height=5 valign="middle">
+<font face="Arial" color="white" size=2>
+<p align="center">
+<A href="index.html">Home</A>&nbsp I &nbsp
+<A href="Aboutme.html">About Us</A>&nbsp I &nbsp
+<A href="HTML.html">HTML&nbsp I &nbsp
+<A href="HTMLtags.html">HTML-Tags</A>&nbsp I &nbsp
+<A href="Attributes.html">Attributes</A>&nbsp I &nbsp
+<A href="CSS.html">CSS</A>&nbsp I &nbsp
+CSS-Properties&nbsp I &nbsp
+<A href="Java.html">Java</A>&nbsp I &nbsp
+<A href="Python.html">Python</A>&nbsp I &nbsp
+<A href="Comment.html">Comments</A></font>
+</TD></TR></Table>
+
+<h1 align="center"><font color="Teal"><u>CSS Properties</u></font></h1>
+
+
+<div class="CSS">
+<p><strong>CSS Properties:</strong> CSS property is used to set the style or assign behavior of HTML elements. The CSS property contains two parts, property_name, and property_value. The property_value is enclosed within double quotes (&#8221; &#8220;).</p>
+</div>
+
+<p>The complete list of CSS Properties are given below:</p>
+
+<Table width="100%"><thead><TR><TH width="20%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Properties</TH><TH width="80%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description</TH></TR></thead></Table>
+
+<Table class="CSS-container">
+<tbody><tbody>
+<tr><td><acss-charset-rule/ target=_blank>@charset Rule</a></td><td>Specifies the character encoding used in the style sheet.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/34f89387-54e7-4787-b920-64131018852e target=_blank></a></div></p></div></td></tr><tr><td><acss-keyframes-rule/ target=_blank>@keyframes Rule</a></td><td>CSS @keyframes specify the animation rule.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/3748722e-3e75-4a0f-9dfa-5154499f488e target=_blank></a></div></p></div></td></tr><tr><td><acss-media-rule/ target=_blank>@media Rule</a></td><td>Set of styles for different media/devices using the Media Queries.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/5c9cab94-9b52-4dc8-9063-70c69dcda25e target=_blank></a></div></p></div></td></tr><tr><td><acss-align-content-property/ target=_blank>align-content</a></td><td>It is used to change the behavior of the flex-wrap property.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/637de389-6f2b-466f-a926-0b789091b7ca target=_blank></a></div></p></div></td></tr><tr><td><acss-align-items-property/ target=_blank>align-items</a></td><td>Set the alignment of items inside the flexible container or in the given window.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/940ebb6a-e8bc-4aec-b953-38bf640a9e61 target=_blank></a></div></p></div></td></tr><tr><td><acss-align-self-property/ target=_blank>align-self</a></td><td>Align the selected items in the flexible container.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/20f55cfa-ffe5-472c-82a5-7c130e1fb037 target=_blank></a></div></p></div></td></tr><tr><td><acss-all-property/ target=_blank>all</a></td><td>Set all the elements&#8217; values to their initial or inherited values.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c5f2a80d-c49b-406e-90bd-724f376c8d64 target=_blank></a></div></p></div></td></tr><tr><td><acss-animation-delay-property/ target=_blank>animation-delay</a></td><td>Specifies the delay for the start of an animation.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/77df42ea-3b2b-4279-98f7-53aff62a9c38 target=_blank></a></div></p></div></td></tr><tr><td><acss-animation-direction-property/ target=_blank>animation-direction</a></td><td>It defines the direction of the animation.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c2688706-e70b-42d0-9ad2-09a7aea670c6 target=_blank></a></div></p></div></td></tr><tr><td><acss-animation-duration-property/ target=_blank>animation-duration</a></td><td>It defines how long an animation should take to complete one cycle.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/08e364ac-ba9f-40cc-ac07-1a50a9b9e142 target=_blank></a></div></p></div></td></tr><tr><td><acss-animation-fill-mode-property/ target=_blank>animation-fill-mode</a></td><td>It defines how styles are applied before and after animation.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ae9abffb-7cf3-4df3-8077-0505d5163240 target=_blank></a></div></p></div></td></tr><tr><td><acss-animation-iteration-count-property/ target=_blank>animation-iteration-count</a></td><td>This specifies the number of times the animation will be repeated.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/5a0e0846-5049-4953-a11a-9abe05dee349 target=_blank></a></div></p></div></td></tr><tr><td><acss-animation-name-property/ target=_blank>animation-name</a></td><td>This specifies the name of the @keyframes describing the animation.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/fd4e7a1c-f64c-4493-8736-69db6473f3ce target=_blank></a></div></p></div></td></tr><tr><td><acss-animation-play-state-property/ target=_blank>animation-play-state</a></td><td>It specifies whether the animation is running or paused.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/d0c688f2-1527-4f3b-b414-79c500c7397a target=_blank></a></div></p></div></td></tr><tr><td><acss-animation-timing-function-property/ target=_blank>animation-timing-function</a></td><td>It specifies how animation makes transitions through keyframes.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/e4f2df9b-9a1b-4ad4-92e8-0b427e939b36 target=_blank></a></div></p></div></td></tr><tr><td><acss-backface-visibility-property/ target=_blank>backface-visibility</a></td><td>Decides whether the back face of an element might be visible or not to the user.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/11d3872d-dd23-49ec-a087-4ae04d56c1fb target=_blank></a></div></p></div></td></tr><tr><td><acss-background-attachment-property/ target=_blank>background-attachment</a></td><td>Sets whether a background image scrolls with the rest of the page or it will be fixed.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/198cb203-1d8e-44e5-99cf-8e36e63bd30c target=_blank></a></div></p></div></td></tr><tr><td><acss-background-blend-mode-property/ target=_blank>background-blend-mode</a></td><td>Defines the blending mode of each background layer of the webpage.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7f702b30-d031-4a65-aa59-37648e5c0311 target=_blank></a></div></p></div></td></tr><tr><td><acss-background-clip-property/ target=_blank>background-clip</a></td><td>This property defines how far the background color or image should extend.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/76999d6c-49c5-4784-8aa7-16bc2dc86d50 target=_blank></a></div></p></div></td></tr><tr><td><acss-background-color-property/ target=_blank>background-color</a></td><td>Set the background color of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9147a2e2-35d9-470e-9e9d-2c11515282b4 target=_blank></a></div></p></div></td></tr><tr><td><acss-background-image-property/ target=_blank>background-image</a></td><td>Set background images for an element, You can set one or more images as well.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b0a11bab-3807-44a3-b7ef-8678eb40a46a target=_blank></a></div></p></div></td></tr><tr><td><acss-background-origin-property/ target=_blank>background-origin</a></td><td>Adjusting the background image of the webpage.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/3cd4cd52-76a8-41a9-bbff-809ec9737b43 target=_blank></a></div></p></div></td></tr><tr><td><acss-background-position-property/ target=_blank>background-position</a></td><td>Sets the initial position for the background image.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/1760b3bc-d25e-487a-864f-f425dd5a7292 target=_blank></a></div></p></div></td></tr><tr><td><acss-background-repeat-property/ target=_blank>background-repeat</a></td><td>It is used to repeat the background image horizontally and vertically.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/eb6ba99e-a648-4a83-a42d-05b95d3ca24f target=_blank></a></div></p></div></td></tr><tr><td><acss-background-size-property/ target=_blank>background-size</a></td><td>It set the size of the background image.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/bcf53410-9ab1-431d-ab88-ea96ae2a9f69 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-property/ target=_blank>border</a></td><td>This is used to style the border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f4f966eb-385d-4bab-a0a4-b2a60c377e29 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-bottom-property/ target=_blank>border-bottom</a></td><td>Set all bottom border properties in one line.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8edd0cbf-4525-443f-bf5c-7f44b5752246 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-bottom-color-property/ target=_blank>border-bottom-color</a></td><td>Set the color of the bottom border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/26cbb667-d168-4933-ac34-cd9cd238209d target=_blank></a></div></p></div></td></tr><tr><td><acss-border-bottom-left-radius-property/ target=_blank>border-bottom-left-radius</a></td><td>Define the radius of the bottom left corner of the border.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8f92680c-436e-40e7-9933-9b5561975f30 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-bottom-right-radius-property/ target=_blank>border-bottom-right-radius</a></td><td>Define the radius of the right bottom corner of the border of a given element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/3ac77a32-a735-42e7-b0cb-64a1344fac2f target=_blank></a></div></p></div></td></tr><tr><td><acss-border-bottom-style-property/ target=_blank>border-bottom-style</a></td><td>Set the style of the bottom border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/aea8f709-ecfb-41d5-8ae8-9a13e3e39ce2 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-bottom-width-property/ target=_blank>border-bottom-width</a></td><td>Set a specific width to the bottom border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/cc0533e9-9e0c-4715-9abb-7a9676dcd138 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-collapse-property/ target=_blank>border-collapse</a></td><td>Set the borders of the cell present inside the table and tells..</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/cb1ab033-0dd8-4b50-b419-d9d4edea3465 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-color-property/ target=_blank>border-color</a></td><td>Set a color to the border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/2525ba40-fcab-447a-b01b-e2fefab6adfe target=_blank></a></div></p></div></td></tr><tr><td><acss-border-image-property/ target=_blank>border-image</a></td><td>It creates a border using an image instead of a normal border.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/3ad62705-e6cc-48cf-8740-bb335fccd1f4 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-image-outset-property/ target=_blank>border-image-outset</a></td><td>It is a shorthand property used to specify the distance.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/1369f3ea-232e-42d8-b87a-161297e8ae33 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-image-repeat-property/ target=_blank>border-image-repeat</a></td><td>It is used to scaling and tiling the border images.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b2ac3fac-5083-4402-a076-4c813b2b2778 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-image-slice-property/ target=_blank>border-image-slice</a></td><td>It divides or slices an image specified by the border-image-source property.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/dc0fdd4f-c968-4c70-adad-02d0418c0c11 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-image-source-property/ target=_blank>border-image-source</a></td><td>It specifies the image source which is to be set as the border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0792a14f-e017-4731-8d90-bd2b4cb6cc0f target=_blank></a></div></p></div></td></tr><tr><td><acss-border-image-width-property/ target=_blank>border-image-width</a></td><td>Set the width of the border image. It can be set by providing multiple values.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/5e9df936-82fe-4568-a634-62238092393c target=_blank></a></div></p></div></td></tr><tr><td><acss-border-left-property/ target=_blank>border-left</a></td><td>Set the width, style, and color of the left border.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9b56d511-b735-482c-bc1f-a979a8feed43 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-left-color-property/ target=_blank>border-left-color</a></td><td>Set the color of the left-border in an Element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0e6a8f82-cf4a-43a9-8da5-003b6bf04307 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-left-style-property/ target=_blank>border-left-style</a></td><td>Set the style of the left border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8b9f2bb3-c290-4a51-bc34-b1570eee2965 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-left-width-property/ target=_blank>border-left-width</a></td><td>Sets the width of the left-border of an Element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ef782a3f-3f46-4cd6-b1e0-f5be938c407c target=_blank></a></div></p></div></td></tr><tr><td><acss-border-radius-property/ target=_blank>border-radius</a></td><td>It is used to round the corners of the outer border edges of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9cbf935d-fa1e-4032-8042-d5610ae6d402 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-right-color-property/ target=_blank>border-right-color</a></td><td>Set the color of the right border in an Element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/4a933f2e-74c8-4858-a8c1-89165ce04d1c target=_blank></a></div></p></div></td></tr><tr><td><acss-border-right-property/ target=_blank>border-right</a></td><td>Set the width, style, and color of the right border.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ca229475-6910-4dac-b4c4-de88ef8938c5 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-right-style-property/ target=_blank>border-right-style</a></td><td>Set the style of the right border of an element..</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6c6216bc-24f4-4cfe-b239-b3715a164b0c target=_blank></a></div></p></div></td></tr><tr><td><acss-border-right-width-property/ target=_blank>border-right-width</a></td><td>Set the width of right-border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b958c93e-57bc-473a-9755-cf400588da3c target=_blank></a></div></p></div></td></tr><tr><td><acss-border-top-color-property/ target=_blank>border-top-color</a></td><td>Set the color of the top border in an Element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f59d1510-6d03-46f2-9448-e960e818d442 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-top-property/ target=_blank>border-top</a></td><td>Set the width, style, and color of the top border.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7c8b9892-77f6-476c-9b29-9c9ebb48957a target=_blank></a></div></p></div></td></tr><tr><td><acss-border-top-left-radius-property/ target=_blank>border-top-left-radius</a></td><td>It specifies the radius of the top left border corner of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/5c42e7da-1c26-44f2-8323-da10756d23d8 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-top-right-radius-property/ target=_blank>border-top-right-radius</a></td><td>It specifies the radius of the top right border corner of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/2a7b02ba-73cd-4615-bc3d-2323d3afad39 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-top-style-property/ target=_blank>border-top-style</a></td><td>It specifies the style of the top border.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/184fb184-e4b3-4f32-a6a5-3598f944f407 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-top-width-property/ target=_blank>border-top-width</a></td><td>Set a specific width to the top border of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9734c1c9-0ac6-4234-b6ae-de163f6c97a7 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-style-property/ target=_blank>border-style</a></td><td>Sets the border line style for all four sides of an element�s border.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/42d74cd9-ce99-4066-938c-aa09778e4377 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-spacing-property/ target=_blank>border-spacing</a></td><td>Set the distance between the borders of neighboring cells in the table.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0e6cc4e2-1293-4932-a9e0-6235a6630192 target=_blank></a></div></p></div></td></tr><tr><td><acss-border-width-property/ target=_blank>border-width</a></td><td>Set the border line width of all four sides of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9a44d91f-8a0a-4faa-b26a-8da7f6c0beff target=_blank></a></div></p></div></td></tr><tr><td><acss-bottom-property/ target=_blank>bottom</a></td><td>It allows the vertical position of an element to be altered.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c6c2d190-441c-4824-9b2b-b8117ffd2b8d target=_blank></a></div></p></div></td></tr><tr><td><acss-box-shadow-property/ target=_blank>box-shadow</a></td><td>Set a shadow-like effect to the frames of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/1c92d7d6-a7aa-4c25-9a3b-8c577bf8afc5 target=_blank></a></div></p></div></td></tr><tr><td><acss-box-decoration-break-property/ target=_blank>box-decoration-break</a></td><td>Control the box decoration after the fragmentation of the paragraph.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a1ce3597-a16e-47b5-b3dd-6b052ac9e40e target=_blank></a></div></p></div></td></tr><tr><td><acss-box-sizing-property/ target=_blank>box-sizing</a></td><td>Defines how the user should calculate the total width and height of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/195e48f1-ee8b-4758-8e56-eb0dc2572a34 target=_blank></a></div></p></div></td></tr><tr><td><acss-caption-side-property/ target=_blank>caption-side</a></td><td>It specifies the position where the table caption is placed. It is used in HTML Tables.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8369fd0b-7dc0-4ea2-8339-579b2a6c99d1 target=_blank></a></div></p></div></td></tr><tr><td><acss-caret-color-property/ target=_blank>caret-color</a></td><td>Set the color of the cursor in inputs, text area, or other editable areas.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/52072045-4369-43df-bcdd-13ab7c8b2497 target=_blank></a></div></p></div></td></tr><tr><td><acss-clear-property/ target=_blank>clear</a></td><td>Specify which side of floating elements are not allowed to float.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/19cbdf72-1e99-4bc5-bd92-25194d501b1f target=_blank></a></div></p></div></td></tr><tr><td><acss-clip-property/ target=_blank>clip</a></td><td>Specify a rectangle to clip an absolutely positioned element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/eae01afd-95ef-484c-bba1-d5e1f359354c target=_blank></a></div></p></div></td></tr><tr><td><acss-column-count-property/ target=_blank>column-count</a></td><td>Divide a portion of content inside any HTML element into a given number of columns.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/bf9d55ef-5ca7-4bed-a619-1bef1b8a2e83 target=_blank></a></div></p></div></td></tr><tr><td><acss-column-fill-property/ target=_blank>column-fill</a></td><td>Specify whether the columns will be filled in a balanced manner or not.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b92d5910-287c-4cd2-8fa9-6c167ab3d6df target=_blank></a></div></p></div></td></tr><tr><td><acss-column-gap-property/ target=_blank>column-gap</a></td><td>Specify the amount of gap between the columns.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/230e3f6f-1639-4460-92c5-ac28caffb368 target=_blank></a></div></p></div></td></tr><tr><td><acss-columns-property/ target=_blank>columns</a></td><td>Set the number of columns and the width of the columns.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/64ad0cf8-9c14-4f1d-8224-87c496ad4128 target=_blank></a></div></p></div></td></tr><tr><td><acss-column-rule-color-property/ target=_blank>column-rule-color</a></td><td>Set the color of the rule between the column.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ff39309f-e8ce-43f4-8800-7e9396039c5a target=_blank></a></div></p></div></td></tr><tr><td><acss-column-rule-property/ target=_blank>column-rule</a></td><td>Define the width, style, and color of the rules between the columns.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f2c7eb84-5f7c-4f99-a4dc-90b0854389cd target=_blank></a></div></p></div></td></tr><tr><td><acss-column-rule-style-property/ target=_blank>column-rule-style</a></td><td>Set the style of the column rule between the columns on a multi-column layout.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/3abc9950-3918-41c8-8bb5-c8efd793fdd5 target=_blank></a></div></p></div></td></tr><tr><td><acss-column-rule-width-property/ target=_blank>column-rule-width</a></td><td>Set the width of the column rule.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9505c8a2-6cda-4f79-b193-3711ea6fffe3 target=_blank></a></div></p></div></td></tr><tr><td><acss-column-span-property/ target=_blank>column-span</a></td><td>Sets the number of columns an element can span across.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b7e38025-613e-437f-8fe8-36ab7626104d target=_blank></a></div></p></div></td></tr><tr><td><acss-column-width-property/ target=_blank>column-width</a></td><td>It is used to define the width of the columns.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/79f074ef-adfc-427e-9bc7-d66e9371ad0d target=_blank></a></div></p></div></td></tr><tr><td><acss-content-property/ target=_blank>content</a></td><td>Generate the content dynamically (during run time).</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/09424f65-756d-4967-bf97-4342ed7c2106 target=_blank></a></div></p></div></td></tr><tr><td><acss-cursor-property/ target=_blank>cursor</a></td><td>Specify the mouse cursor to be displayed while pointing to an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c43decd6-18e9-4d1b-80c6-abb628800250 target=_blank></a></div></p></div></td></tr><tr><td><acss-counter-increment-property/ target=_blank>counter-increment</a></td><td>It is used to increment/decrement the value of a counter.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/868948a5-4432-4d8c-962b-0c85dba513e9 target=_blank></a></div></p></div></td></tr><tr><td><acss-counter-reset-property/ target=_blank>counter-reset</a></td><td>Create or reset the CSS counter for elements.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/897e33d0-1cfb-4d0c-859c-ee93a8436bd8 target=_blank></a></div></p></div></td></tr><tr><td><acss-direction-property/ target=_blank>direction</a></td><td>Define the direction of text/writing within any block element</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/14f07ad7-95c2-49dd-b8df-14ba31a6c440 target=_blank></a></div></p></div></td></tr><tr><td><acss-display-property/ target=_blank>display</a></td><td>Define the components(div, hyperlink, heading, etc) are going to be placed on the web page</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/01d007bc-edae-485b-a37c-33c563317dbb target=_blank></a></div></p></div></td></tr><tr><td><acss-empty-cells-property/ target=_blank>empty-cells</a></td><td>It specifies whether to display the borders or not in the empty cells in a table.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/51742e6b-9b58-4f92-a13c-1da024ff8108 target=_blank></a></div></p></div></td></tr><tr><td><acss-filter-property/ target=_blank>filter</a></td><td>Set the visual effect of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/bf06fb9d-18f9-433d-96ed-75f1a8a67a03 target=_blank></a></div></p></div></td></tr><tr><td><acss-flex-property/ target=_blank>flex</a></td><td>It is the combination of flex-grow, flex-shrink, and flex-basis properties.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/eef8085d-068f-4da1-b387-e9525174d582 target=_blank></a></div></p></div></td></tr><tr><td><acss-flex-basis-property/ target=_blank>flex-basis</a></td><td>Set the initial size of the flexible item.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/af1f8610-d48b-4e7a-a456-b213ba7447d1 target=_blank></a></div></p></div></td></tr><tr><td><acss-flex-direction-property/ target=_blank>flex-direction</a></td><td>Set the direction of the flexible items of a div.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c4238294-d92f-4ad3-b1eb-7041844f9990 target=_blank></a></div></p></div></td></tr><tr><td><acss-flex-flow-property/ target=_blank>flex-flow</a></td><td>It is used to make the flexible item reversible and wrapped if required.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a08e921b-e05e-4e86-8cf0-0d2b3b268bc8 target=_blank></a></div></p></div></td></tr><tr><td><acss-flex-grow-property/ target=_blank>flex-grow</a></td><td>Specifies how much the item will grow compared to other items inside that container.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9c433834-e6ce-47a8-898b-7aba346f4974 target=_blank></a></div></p></div></td></tr><tr><td><acss-flex-shrink-property/ target=_blank>flex-shrink</a></td><td>Specifies how much the item will shrink compared to other items inside that container.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/42affeae-28f5-451d-ad9e-1413171e1681 target=_blank></a></div></p></div></td></tr><tr><td><acss-flex-wrap-property/ target=_blank>flex-wrap</a></td><td>It specifies whether flex items are forced into a single line or wrapped onto multiple lines.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/d23c7be4-8b45-4bc2-a557-a6dc291b7a90 target=_blank></a></div></p></div></td></tr><tr><td><acss-font-family-property/ target=_blank>font-family</a></td><td>Set the font of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/221e3ef4-b634-4a73-b9a0-7d4db02ab44c target=_blank></a></div></p></div></td></tr><tr><td><acss-font-kerning-property/ target=_blank>font-kerning</a></td><td>Control the usage of the Kerning Information that has been stored in the Font</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f9bdbda2-5294-48c8-bbc4-4dc6bb19074d target=_blank></a></div></p></div></td></tr><tr><td><acss-font-size-adjust-property/ target=_blank>font-size-adjust</a></td><td>Adjusts the font size based on the height of the lowercase.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b5398594-c6cd-4a6f-9b2d-a27da0f90024 target=_blank></a></div></p></div></td></tr><tr><td><acss-font-size-property/ target=_blank>font-size</a></td><td>Set the font size of the text in an HTML document.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b8a84bfd-466d-4fe5-ad0b-5b7a5f9e0498 target=_blank></a></div></p></div></td></tr><tr><td><acss-font-stretch-property/ target=_blank>font-stretch</a></td><td>Set the text wider or narrower.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c116d408-1e1c-4fa3-95a7-f0cc3f433a8d target=_blank></a></div></p></div></td></tr><tr><td><acss-font-style-property/ target=_blank>font-style</a></td><td>Style the given particular text in a normal, italic, or oblique face from its font family.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/41880245-484f-40ac-85a7-66085897331a target=_blank></a></div></p></div></td></tr><tr><td><acss-font-variant-property/ target=_blank>font-variant</a></td><td>Convert all lowercase letters into uppercase letters.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/bb394744-0b6e-4ff6-b831-7e8b780c2b19 target=_blank></a></div></p></div></td></tr><tr><td><acss-font-weight-property/ target=_blank>font-weight</a></td><td>Set the weight or thickness of the font being used with the HTML Text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/1691d125-5a67-4b2c-b3d5-c25053e3e1fa target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-property/ target=_blank>grid</a></td><td>Offers a grid-based layout system, with rows and columns</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/05e31a8f-74ba-42c4-952b-d1459abb87a0 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-area-property/ target=_blank>grid-area</a></td><td>Set a grid item size and location in a grid layout.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/e2b13412-3d00-4ffc-a603-e1533f37d2cd target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-auto-columns-property/ target=_blank>grid-auto-columns</a></td><td>Specify the size for the columns of implicitly generated grid containers.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/25e573e7-d783-4907-8cbd-48535c120946 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-auto-flow-property/ target=_blank>grid-auto-flow</a></td><td>It specifies exactly how auto-placed items get flowed into the grid.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ea487893-43e2-485b-9d36-6d6b41fdfee5 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-auto-rows-property/ target=_blank>grid-auto-rows</a></td><td>Specify the size for the rows of implicitly generated grid containers.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/80778420-e383-4ec4-8490-f52272161e9f target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-column-property/ target=_blank>grid-column</a></td><td>Specify a grid item&#8217;s size and location within a grid column.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6f4cb611-a982-42d4-a971-c2c130ebf1a6 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-column-end-property/ target=_blank>grid-column-end</a></td><td>Explains the number of columns an item will span, or on which column line the item will end.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/d11d8eaf-e275-4574-a99d-48dee76b3ed7 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-column-gap-property/ target=_blank>grid-column-gap</a></td><td>Set the gap size between the columns in a grid layout.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/929daf80-db36-41ee-94ba-f9a48916658d target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-column-start-property/ target=_blank>grid-column-start</a></td><td>Set on which column the line item will start.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/11d9dbea-4f86-4ac5-a3d0-b64d26e23fb5 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-gap-property/ target=_blank>grid-gap</a></td><td>Sets the gap size between the rows and columns in a grid layout.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a619530b-d0c7-4efd-b205-74b83f01c44d target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-row-property/ target=_blank>grid-row</a></td><td>Specify the size and location in a grid layout.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f32fa06d-17eb-4a92-982d-d93c0124464e target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-row-end-property/ target=_blank>grid-row-end</a></td><td>it defines the grid items&#8217; end position.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/252f7fd3-97fd-40ef-a39b-3f8d4d79a2df target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-row-gap-property/ target=_blank>grid-row-gap</a></td><td>Set the gap size between the grid elements.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/413cd92e-f594-493b-a406-6ad67369ea32 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-row-start-property/ target=_blank>grid-row-start</a></td><td>Defines the grid items&#8217; start position.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/349afc7a-cb9f-4316-af56-220a19d456c1 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-template-property/ target=_blank>grid-template</a></td><td>It defines grid columns, rows, and areas.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/d8119b65-04e7-44d4-b1e4-e63328c56793 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-template-areas-property/ target=_blank>grid-template-areas</a></td><td>It specifies the area within the grid layout.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/681d3c4b-db4f-443d-8694-3f6a43f1a2cb target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-template-columns-property/ target=_blank>grid-template-columns</a></td><td>Set the number of columns and size of the columns of the grid.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/98e2a030-fa13-4ed6-b0b7-847980dbd5c5 target=_blank></a></div></p></div></td></tr><tr><td><acss-grid-template-rows-property/ target=_blank>grid-template-rows</a></td><td>Set the number of rows and height of the rows in a grid.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/409f569a-85db-4794-87c9-3cf447c78220 target=_blank></a></div></p></div></td></tr><tr><td><acss-hanging-punctuation-property/ target=_blank>hanging-punctuation</a></td><td>Pprovides web designers some upper hand over typography on the webpage.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/3e73cdad-6a79-451b-8cf4-f58caf58b99c target=_blank></a></div></p></div></td></tr><tr><td><acss-height-property/ target=_blank>height</a></td><td>Set the height of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/2dabfa11-4735-416b-8580-9f164d2becab target=_blank></a></div></p></div></td></tr><tr><td><acss-hyphens-property/ target=_blank>hyphens</a></td><td>It defines how the words should be hyphenated to create soft wrap opportunities within words.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8ba3d52f-2a2b-4e5a-81a4-90528a0fd9de target=_blank></a></div></p></div></td></tr><tr><td><acss-isolation-property/ target=_blank>isolation</a></td><td>Define whether an element must create new stacking content.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/16fa81ac-8f14-437e-ade7-78a7b1c98406 target=_blank></a></div></p></div></td></tr><tr><td><acss-justify-content-property/ target=_blank>justify-content</a></td><td>Alignes the flexible containers item when there is available space.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/40f9c605-5d3e-4d66-a9a4-0b46169f68a7 target=_blank></a></div></p></div></td></tr><tr><td><acss-left-property/ target=_blank>left</a></td><td>It specifies the horizontal position of a positioned element</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f352c635-170d-430d-a184-f75d7761040e target=_blank></a></div></p></div></td></tr><tr><td><acss-letter-spacing-property/ target=_blank>letter-spacing</a></td><td>Set the spacing behavior between text characters .</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6c7c264d-8207-45f8-8011-452c9e9ab3f0 target=_blank></a></div></p></div></td></tr><tr><td><acss-line-height-property/ target=_blank>line-height</a></td><td>Set the amount of space used for lines, such as in the text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/34a4e1cc-739f-4ddf-b337-5c09720b4d8f target=_blank></a></div></p></div></td></tr><tr><td><acss-list-style-property/ target=_blank>list-style</a></td><td>It is used to set the list style.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/460e7f2d-05ed-409b-a431-21c9dffef3ce target=_blank></a></div></p></div></td></tr><tr><td><acss-list-style-image-property/ target=_blank>list-style-image</a></td><td>Set images that will be used as the list item marker.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/66dee65d-f466-49a0-bc51-2c2dbbb3fcda target=_blank></a></div></p></div></td></tr><tr><td><acss-list-style-position-property/ target=_blank>list-style-position</a></td><td>Specifies the position of the marker box with respect to the principal block box.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a8be0b3f-f79e-497d-aa59-f81ade43a57d target=_blank></a></div></p></div></td></tr><tr><td><acss-list-style-type-property/ target=_blank>list-style-type</a></td><td>It specifies the appearance(such as a disc, character, or custom counter style) of the list item marker.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/03111f1e-5669-45a1-b1c1-803394f0064e target=_blank></a></div></p></div></td></tr><tr><td><acss-margin-bottom-property/ target=_blank>margin-bottom</a></td><td>Specify the margin to be used on the bottom of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a6a342d7-4849-46a7-b8e3-90b6e3327666 target=_blank></a></div></p></div></td></tr><tr><td><acss-margin-left-property/ target=_blank>margin-left</a></td><td>Set the width of the margin on the left of the desired element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/04cdae02-63c5-4537-84d3-51593802f269 target=_blank></a></div></p></div></td></tr><tr><td><acss-margin-right-property/ target=_blank>margin-right</a></td><td>Set the right margin of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/cd3621b0-0e6b-4826-af48-426a4f8c3ba2 target=_blank></a></div></p></div></td></tr><tr><td><acss-margin-top-property/ target=_blank>margin-top</a></td><td>Set the top margin of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/4e67ea09-c8b2-41d2-9cb2-07b4aa870237 target=_blank></a></div></p></div></td></tr><tr><td><acss-max-height-property/ target=_blank>max-height</a></td><td>Set the maximum height of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/4d1bf57b-b1f2-41b9-aae9-bf7a091fe2a1 target=_blank></a></div></p></div></td></tr><tr><td><acss-max-width-property/ target=_blank>max-width</a></td><td>Define the maximum width of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0c20a860-4e55-41df-9e33-eedcab21adfe target=_blank></a></div></p></div></td></tr><tr><td><acss-min-height-property/ target=_blank>min-height</a></td><td>Set the minimum height of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/336b482d-7f55-4a50-afd5-d928bfc08452 target=_blank></a></div></p></div></td></tr><tr><td><acss-min-width-property/ target=_blank>min-width</a></td><td>Define the minimum width of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/919ccbc1-f71e-4857-a74a-d459d06f949c target=_blank></a></div></p></div></td></tr><tr><td><acss-mix-blend-mode-property/ target=_blank>mix-blend-mode</a></td><td>Define the minimum width of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0af4cce1-fb24-477f-890b-f44390c9c642 target=_blank></a></div></p></div></td></tr><tr><td><acss-mask-image-property/ target=_blank>mask-image</a></td><td>To set the mask of an image for a particular element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/167d51c6-b632-43d6-8bc2-e76cb9e109ea target=_blank></a></div></p></div></td></tr><tr><td><acss-the-object-fit-property/ target=_blank>object-fit</a></td><td>Specify the blending of an element�s background with the element�s parent.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6a4296a9-8e0c-4f61-babd-01fddcfe3a87 target=_blank></a></div></p></div></td></tr><tr><td><acss-object-position-property/ target=_blank>object-position</a></td><td>Specifies how an image or video element is positioned with x/y coordinates inside its content box.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f7ea4ec2-d2c9-41f0-ba7a-ecde517a133b target=_blank></a></div></p></div></td></tr><tr><td><acss-order-property/ target=_blank>order</a></td><td>Set the order of each flexible item in relation to other items inside the flexible container.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c4ceb45c-6e91-4a8a-bf30-b106fa330ba2 target=_blank></a></div></p></div></td></tr><tr><td><acss-outline-color-property/ target=_blank>outline-color</a></td><td>Sets the outline color of an element</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9d5b8bf9-2558-4a73-8ab5-911e691656ee target=_blank></a></div></p></div></td></tr><tr><td><acss-outline-offset-property/ target=_blank>outline-offset</a></td><td>Sets the amount of space between an outline and the edge or border of an element.&nbsp;</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ff81e96c-94da-4446-8cfc-01b7c06329f8 target=_blank></a></div></p></div></td></tr><tr><td><acss-outline-style-property/ target=_blank>outline-style</a></td><td>Set the appearance of the outline of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/39d13969-f3d8-455a-8008-3a126bf14070 target=_blank></a></div></p></div></td></tr><tr><td><acss-outline-width-property/ target=_blank>outline-width</a></td><td>It specifies the width of this outline for a specific element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/09d80e96-01e1-418a-89c2-328e1126524c target=_blank></a></div></p></div></td></tr><tr><td><acss-overflow-x-property/ target=_blank>overflow-x</a></td><td>It specifies whether to add a scroll bar horizontally.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/dd19a149-fa32-4fa3-9370-e125dd0d7ff0 target=_blank></a></div></p></div></td></tr><tr><td><acss-overflow-y-property/ target=_blank>overflow-y.</a></td><td>It specifies whether to add a scroll bar vertically.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/57ad0e48-a0c7-4dbb-ac4e-4e8d4c61535c target=_blank></a></div></p></div></td></tr><tr><td><acss-padding-bottom-property/ target=_blank>padding-bottom</a></td><td>Set the padding on the bottom of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ead77b65-03ae-4b90-a4b9-327a6b58b4f3 target=_blank></a></div></p></div></td></tr><tr><td><acss-padding-left-property/ target=_blank>padding-left</a></td><td>Set the padding on the left side of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f6765592-8ee4-486e-be9c-1911031d4a93 target=_blank></a></div></p></div></td></tr><tr><td><acss-padding-right-property/ target=_blank>padding-right</a></td><td>Set the padding on the right-side of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ea87efc3-5b54-44d3-b7d0-8f5cb668a0e0 target=_blank></a></div></p></div></td></tr><tr><td><acss-padding-top-property/ target=_blank>padding-top</a></td><td>Set the padding on the top of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/27213833-9554-4359-b9d5-85bb09d3b1a1 target=_blank></a></div></p></div></td></tr><tr><td><acss-page-break-after-property/ target=_blank>page-break-after</a></td><td>Add a page-break after the stated element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6a4d0897-1ddf-4f83-adea-46d6155e4124 target=_blank></a></div></p></div></td></tr><tr><td><acss-page-break-before-property/ target=_blank>page-break-before</a></td><td>Add a page-break-before the specified element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b44a5cc7-e5ad-4f1d-bcea-7c240519009a target=_blank></a></div></p></div></td></tr><tr><td><acss-page-break-inside-property/ target=_blank>page-break-inside</a></td><td>Add page breaks inside the element to which it is applied while printing.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/3e0ed80e-d88e-4efb-ad18-6fa05e299b14 target=_blank></a></div></p></div></td></tr><tr><td><acss-perspective-property/ target=_blank>perspective</a></td><td>Give perspective to 3D objects.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/be5bfecd-640d-428d-abcb-a6b7efc051c2 target=_blank></a></div></p></div></td></tr><tr><td><acss-perspective-origin-property/ target=_blank>perspective-origin</a></td><td>Define the position at which the user is looking 3D object i.e. the vanishing point of the 3D object.&nbsp;</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c43e811e-c5dd-4bba-b1dd-31f60057f04c target=_blank></a></div></p></div></td></tr><tr><td><acss-pointer-events-property/ target=_blank>pointer-events</a></td><td>Specify whether an element show pointer events and whether or not show on the pointer.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/2638816e-75bd-4799-ab2b-adf8e5285ba9 target=_blank></a></div></p></div></td></tr><tr><td><acss-quotes-property/ target=_blank>quotes</a></td><td>Set the quotation mark for quotations used in the sentence.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6fef4942-19c3-4af6-9903-ad4bb043684f target=_blank></a></div></p></div></td></tr><tr><td><acss-resize-property/ target=_blank>resize</a></td><td>Resize the element according to user requirements.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/da504e56-5eab-4df9-b5f4-0c5e6dba754f target=_blank></a></div></p></div></td></tr><tr><td><acss-right-property/ target=_blank>right</a></td><td>Affects the horizontal position of the element as but has no effect on non-positioned elements.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/4c0b8200-56f4-410e-90ea-06e143216ed8 target=_blank></a></div></p></div></td></tr><tr><td><acss-scroll-behavior-property/ target=_blank>scroll-behavior</a></td><td>Set smooth animation of scroll position instead of a scroll jump</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/fe63c4f3-6328-4430-ad73-ddf22b5d9d90 target=_blank></a></div></p></div></td></tr><tr><td><acssstyledeclaration-csstext-property/ target=_blank>cssText</a></td><td>Set or return the value of an inline style declaration of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/2acea63b-d21d-421f-9700-94d6d8ffe03b target=_blank></a></div></p></div></td></tr><tr><td><acssstyledeclaration-length-property/ target=_blank>length</a></td><td>Find the number of style declarations used for the particular element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c93a5312-5ff2-4169-8ced-4ca3689e51ba target=_blank></a></div></p></div></td></tr><tr><td><acssstyledeclaration-parentrule-property/ target=_blank>parentRule</a></td><td>Return the CSS Rule Object that represents a CSS rule-set that contains a selector and declaration block.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/d78d873c-9f26-4ec6-94e1-32f4fca72100 target=_blank></a></div></p></div></td></tr><tr><td><acss-table-layout-property/ target=_blank>table-layout</a></td><td>It is used to display the layout of the table.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/986ea8d7-0716-43f1-8765-8e3ab22ed4ff target=_blank></a></div></p></div></td></tr><tr><td><acss-tab-size-property/ target=_blank>tab-size</a></td><td>It specifies the width of a tab character.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/1c427733-2990-4e7a-a1bf-33d794ee12f8 target=_blank></a></div></p></div></td></tr><tr><td><acss-text-align-property/ target=_blank>text-align</a></td><td>Set the horizontal alignment of text in an element.ie.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/e1f8e04f-f5d1-452d-a005-81d7e0b0ee56 target=_blank></a></div></p></div></td></tr><tr><td><acss-text-align-last-property/ target=_blank>text-align-last</a></td><td>Set the last line of the paragraph just before the line break.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/be0a8fb0-0c6b-4eea-9e4e-357eba599ce4 target=_blank></a></div></p></div></td></tr><tr><td><acss-text-decoration-property/ target=_blank>text-decoration</a></td><td>It is used to &#8220;decorate� the content of the text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b2c56c9c-5910-41d7-8a66-88fef37a5f3c target=_blank></a></div></p></div></td></tr><tr><td><acss-text-decoration-color-property/ target=_blank>text-decoration-color</a></td><td>Set the color of decorations(overlines, underlines, and line-throughs) over the text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6698a463-3ee6-42e9-b39f-0a1fc7a0110a target=_blank></a></div></p></div></td></tr><tr><td><acss-text-decoration-line-property/ target=_blank>text-decoration-line</a></td><td>Sets various kinds of text-decoration.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/816dedd4-5561-4cd7-927e-282ad28d9655 target=_blank></a></div></p></div></td></tr><tr><td><acss-text-decoration-style-property/ target=_blank>text-decoration-style</a></td><td>Set the text decoration of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a5f9e549-afc9-4d4b-88a4-baace4603ccf target=_blank></a></div></p></div></td></tr><tr><td><acss-text-indent-property/ target=_blank>text-indent</a></td><td>Set the indentation of the first line in each block of text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8594c6d2-3d99-4e9c-b75e-1aab0b94d457 target=_blank></a></div></p></div></td></tr><tr><td><acss-text-justify-property/ target=_blank>text-justify</a></td><td>Set the text-align to justify, which spreads the words into a complete and fixed-width line.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/404158f9-a4bc-4fa5-84fd-86b4715692b5 target=_blank></a></div></p></div></td></tr><tr><td><acss-text-overflow-property/ target=_blank>text-overflow</a></td><td>Specify that some text has overflown and is hidden from view.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f9779fb6-2a23-4c6c-9505-714a1cb3373d target=_blank></a></div></p></div></td></tr><tr><td><acss-text-transform-property/ target=_blank>text-transform</a></td><td>Control the capitalization of the text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/429c44b2-7b44-4d8a-b6a5-ec78e20e00f9 target=_blank></a></div></p></div></td></tr><tr><td><acss-text-shadow-property/ target=_blank>text-shadow</a></td><td>Add shadows to the text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/304c082d-c4c3-4b92-ba05-b905e5f8512f target=_blank></a></div></p></div></td></tr><tr><td><acss-top-property/ target=_blank>top</a></td><td>Set the top position of an element. The top property varies with the position of the element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7524c0cf-6835-42c2-97a2-0e40521f2a39 target=_blank></a></div></p></div></td></tr><tr><td><acss-transform-property/ target=_blank>transform</a></td><td>Change the coordinate space of the visual formatting model.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/c4373034-1544-4e21-ae38-3504b2fb7e7d target=_blank></a></div></p></div></td></tr><tr><td><acss-transition-property/ target=_blank>CSS transition Property</a></td><td>It is used to make some transition effects.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a9c97316-e632-4e17-b595-fba20c773e55 target=_blank></a></div></p></div></td></tr><tr><td><acss-transition-delay-property/ target=_blank>transition-delay</a></td><td>Define the time to start the transition.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/af92869a-3f31-4f1d-a201-b5bd4bd8db1a target=_blank></a></div></p></div></td></tr><tr><td><acss-transition-duration-property/ target=_blank>transition-duration</a></td><td>Set the time duration (in seconds or milliseconds) to complete the transition effect.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/24033f87-6ca5-4d3d-8872-6ff29a3813f9 target=_blank></a></div></p></div></td></tr><tr><td><acss-transition-property-property/ target=_blank>transition-property</a></td><td>Display the change in the property of an element over a specified duration.&nbsp;</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/bcccd42e-e661-47ef-b2cd-d19ea26a842e target=_blank></a></div></p></div></td></tr><tr><td><acss-unicode-bidi-property/ target=_blank>unicode-bidi</a></td><td>Determine how the bidirectional text is handled in a document.&nbsp;</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a8d4cffc-12a1-423c-b132-1180f0c9516f target=_blank></a></div></p></div></td></tr><tr><td><acss-user-select-property/ target=_blank>user-select</a></td><td>It specifies whether the text can be selected by the user or not.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ac498dd9-4b80-4e18-8b71-768730f05e58 target=_blank></a></div></p></div></td></tr><tr><td><acss-vertical-align-property/ target=_blank>vertical-align</a></td><td>Set the vertical alignment of the table box or inline element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9bd35890-d313-4506-901a-1676ec5030b1 target=_blank></a></div></p></div></td></tr><tr><td><acss-visibility-property/ target=_blank>visibility</a></td><td>Specify whether an element is visible or not.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0ea0d931-e8ce-4643-aa6f-ec97e3ff2b89 target=_blank></a></div></p></div></td></tr><tr><td><acss-white-space-property/ target=_blank>white-space</a></td><td>Control the text wrapping and white-spacing./td></td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/206c1f95-bf8c-47c8-8a56-115b6f13ce61 target=_blank></a></div></p></div></td></tr><tr><td><acss-word-break-property/ target=_blank>word-break</a></td><td>Specify how to break the word when the word reached at end of the line.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b54aac7f-d9b2-446a-9bf2-24f04f4cfbb3 target=_blank></a></div></p></div></td></tr><tr><td><acss-word-spacing-property/ target=_blank>word-spacing</a></td><td>Increase or decreases the white space between words.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8cf06cf1-10ef-4439-b11f-11aa1cd9a4fd target=_blank></a></div></p></div></td></tr><tr><td><acss-word-wrap-property/ target=_blank>word-wrap</a></td><td>It breaks long words and wraps them into the next line.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/bc2e9f06-2397-4132-8c82-080b5994d48a target=_blank></a></div></p></div></td></tr><tr><td><acss-will-change-property/ target=_blank>will-change</a></td><td>Specify the browser how an element is expected to change.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/fff80b2a-6f18-4abe-92d1-ccdae4180975 target=_blank></a></div></p></div></td></tr><tr><td><acss-writing-mode-property/ target=_blank>writing-mode</a></td><td>Specify whether the lines of text are laid out horizontally or vertically.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b689c25b-6dc7-4881-9247-dfb908097ece target=_blank></a></div></p></div></td></tr><tr><td><acss-z-index-property/ target=_blank>z-index</a></td><td>Define the order of elements if they overlap with each other.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/aeb4fe77-6852-45c0-86aa-aea1b9745bfe target=_blank></a></div></p></div></td></tr></tbody></Table>
+
+
+ <div class="sticker">
+    <div class="book">
+	<div class="book__pg-shadow"></div>
+	<div class="book__pg"></div>
+	<div class="book__pg book__pg--2"></div>
+	<div class="book__pg book__pg--3"></div>
+	<div class="book__pg book__pg--4"></div>
+	<div class="book__pg book__pg--5"></div>
+</div>
+  </div>
+
+<HR width="100%" align="center" size=7 color="gold"><BR>
+
+<marquee style="z-index:2;font-family:Comic Sans MS;font-size:20pt;color:gold;height:40px;scrollamount:50">
+RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+</marquee>
+
+</body>
+
+</html>

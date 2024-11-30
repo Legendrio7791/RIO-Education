@@ -1,0 +1,682 @@
+<html>
+
+<head>
+  
+<title>CSS Explanation</title>
+  
+<link rel="icon" href="Logo.png" type="image/png">
+<style>
+    
+Table{background-repeat:no-repeat}
+A:link{color:red;display:inline-block;text-decoration:none}
+A:hover{color:Aqua;}
+pre{
+      padding-left:15px;
+}
+
+
+p{
+      padding-left:15px;
+}
+
+
+
+TD{
+      padding-left:45px;
+      padding-top:15px;
+}
+
+
+    }
+h1{
+      
+      font-family: 'Algerian';
+      font-size: 36px;
+      color: 'teal';
+      align: center;
+}
+h2{
+      
+      font-family: 'Times New Roman';
+      font-size: 36px;
+      text-align: center;
+}
+h3{
+      
+      font-family: 'Times New Roman';
+      font-size: 36px;
+      text-align: center;
+}
+ body {
+	display: grid;
+	place-items: center;
+      background-image: url('education10.jpeg');
+      background-repeat:repeat;
+      background-size: contain;
+      margin: 0;
+      padding: 0;
+    }
+    @keyframes zoom-1 {
+      0% {
+        transform: translate(5%, 30%) scale(0); opacity:0;
+      }
+      
+      50% {
+        transform: translate(5%, 30%) scale(1); opacity:1;
+      }
+      
+      100% {
+        transform: translate(5%, 30%) scale(1); opacity:1;
+      }
+    }
+
+
+    
+    @keyframes zooming {
+      0% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+      50% {
+        transform: translate(15%, 7%) scale(1.2); opacity:1;
+      }
+      
+      100% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+
+    }
+    .sticker-HTML img {
+      height: 100%;
+    }
+
+
+    
+
+    .sticker-HTML {
+      position: fixed;
+      bottom: 50px;
+      left: 15px;
+      height: 70px;
+      animation: zooming 4s infinite;
+    }
+
+
+
+    .sticker {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 100px;
+    }
+
+    .sticker img {
+      height: 100%;
+    }
+
+
+
+:root {
+	--hue: 180;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
+	--primary-l: hsl(var(--hue),90%,65%);
+	--primary-d: hsl(var(--hue),90%,45%);
+	--white: hsl(var(--hue),10%,100%);
+	--white-d: hsl(var(--hue),10%,45%);
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+.book,
+.book__pg-shadow,
+.book__pg {
+	animation: cover 7s ease-in-out infinite;
+}
+.book {
+	background-color: var(--primary-l);
+	border-radius: 0.25em;
+	box-shadow:
+		0 0.25em 0.5em hsla(0,0%,0%,0.3),
+		0 0 0 0.25em var(--primary) inset;
+	padding: 0.25em;
+	perspective: 37.5em;
+	position: relative;
+	width: 8em;
+	height: 6em;
+	transform: translate3d(0,0,0);
+	transform-style: preserve-3d;
+}
+.book__pg-shadow,
+.book__pg {
+	position: absolute;
+	left: 0.25em;
+	width: calc(50% - 0.25em);
+}
+.book__pg-shadow {
+	animation-name: shadow;
+	background-image: linear-gradient(-45deg,hsla(0,0%,0%,0) 50%,hsla(0,0%,0%,0.3) 50%);
+	filter: blur(0.25em);
+	top: calc(100% - 0.25em);
+	height: 3.75em;
+	transform: scaleY(0);
+	transform-origin: 100% 0%;
+}
+.book__pg {
+	animation-name: pg1;
+	background-color: var(--white);
+	background-image: linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	height: calc(100% - 0.5em);
+	transform-origin: 100% 50%;
+}
+.book__pg--2,
+.book__pg--3,
+.book__pg--4 {
+	background-image:
+		repeating-linear-gradient(hsl(var(--hue),10%,10%) 0 0.125em,hsla(var(--hue),10%,10%,0) 0.125em 0.5em),
+		linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 2.5em 4.125em, 100% 100%;
+}
+.book__pg--2 {
+	animation-name: pg2;
+}
+.book__pg--3 {
+	animation-name: pg3;
+}
+.book__pg--4 {
+	animation-name: pg4;
+}
+.book__pg--5 {
+	animation-name: pg5;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,30%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+}
+
+/* Animations */
+@keyframes cover {
+	from, 5%, 45%, 55%, 95%, to {
+		animation-timing-function: ease-out;
+		background-color: var(--primary-l);
+	}
+	10%, 40%, 60%, 90% {
+		animation-timing-function: ease-in;
+		background-color: var(--primary-d);
+	}
+}
+@keyframes shadow {
+	from, 10.01%, 20.01%, 30.01%, 40.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0.2) rotateY(90deg);
+	}
+	10%, 20%, 30%, 40%, 50%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	50.01%, 60.01%, 70.01%, 80.01%, 90.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	60%, 70%, 80%, 90%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+}
+@keyframes pg1 {
+	from, to {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.4deg);
+	}
+	10%, 15% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	20%, 80% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	85%, 90% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+}
+@keyframes pg2 {
+	from, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	5%, 10% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	20%, 25% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	30%, 70% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	75%, 80% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	90%, 95% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+}
+@keyframes pg3 {
+	from, 10%, 90%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	15%, 20% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	30%, 35% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	40%, 60% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	65%, 70% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	80%, 85% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+}
+@keyframes pg4 {
+	from, 20%, 80%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	25%, 30% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	40%, 45% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	50% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	55%, 60% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	70%, 75% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+}
+@keyframes pg5 {
+	from, 30%, 70%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+	35%, 40% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0deg);
+	}
+	50% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.6deg);
+	}
+	60%, 65% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+}
+
+
+
+    .HTML-container {
+      display: flex;
+      width: 800px;
+      height: 350px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.10);
+      box-sizing: border-box;
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .HTML-1 {
+      display: inline-block;
+      width: 400px;
+      height: 150px;
+      background-color: rgba(255, 192 , 203, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 15px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .HTML-2 {
+      display: inline-block;
+      width: 850px;
+      height: 120px;
+      background-color: rgba(255, 192 , 203, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .HTML-para {
+      display: inline-block;
+      width: 1200px;
+      height: 250px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+
+    .HTML-para0 {
+      display: inline-block;
+      width: 1200px;
+      height: 180px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .HTML-para1 {
+      display: inline-block;
+      width: 1200px;
+      height: 150px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .HTML-para2 {
+      display: inline-block;
+      width: 1200px;
+      height: 270px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }   
+
+    .HTML-para3 {
+      display: inline-block;
+      width: 1200px;
+      height: 260px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }   
+
+    .HTML-para4 {
+      display: inline-block;
+      width: 1200px;
+      height: 110px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }   
+</style>
+
+</head>
+<body bgcolor="white" Link="red" vlink="red" alink="fuchsia">
+<Table width="100%" height=5 bgcolor="black">
+<TR><TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="right"><Img src="phone.jpeg" align="bottom" width=25 height=25>&nbsp9935025968</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" color="white" size=2>
+<p align="right"><A href="https://www.facebook.com"><Img src="facebook.jpeg" align="bottom" width=25 height=25>&nbsp&nbsp&nbsp&nbsp</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" size=2>
+<p align="left"><A href="https://www.gmail.com"><Img src="gmail.jpeg" align="bottom" width=30 height=30>&nbsp</p>
+</TD>
+</font>
+</TR></Table>
+<HR>
+<Table width="100%" height=35 bgcolor="black">
+<TR>
+<TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="left"><Img src="top-logo.jpeg" align="bottom" width=100 height=90></p>
+</TD>
+<TD width="100%" height=5 valign="middle">
+<font face="Arial" color="white" size=2>
+<p align="center">
+<A href="index.html">Home</A>&nbsp I &nbsp
+<A href="Aboutme.html">About Us</A>&nbsp I &nbsp
+<A href="HTML.html">HTML</A>&nbsp I &nbsp
+<A href="HTMLtags.html">HTML-Tags</A>&nbsp I &nbsp
+<A href="Attributes.html">Attributes</A>&nbsp I &nbsp
+CSS&nbsp I &nbsp
+<A href="CSSproperties.html">CSS-Properties</A>&nbsp I &nbsp
+<A href="Java.html">Java</A>&nbsp I &nbsp
+<A href="Python.html">Python</A>&nbsp I &nbsp
+<A href="Comment.html">Comments</A></font>
+</TD></TR></Table>
+
+<h1 align="center"><font color="Teal"><u>CSS </u></font></h1> 
+
+<h2>Introduction</h2>
+    
+<div class="HTML-para">
+<p>CSS stands for Cascading Style Sheets. It is a styling language used to describe the look and formatting of a document written in HTML.</p>
+    
+<p>
+CSS allows you to separate the presentation of your web pages from the structure and content.</p>
+  
+</div>
+
+<h2>Basic CSS Syntax</h2>
+  
+<div class="HTML-para0">
+<p>CSS rules consist of a selector and a declaration block. The selector specifies which HTML elements to style, and the declaration block contains the property-value pairs that define the styles.</p>
+  
+  
+</div>
+<h3>Example:</h3>
+<pre class="HTML-1">
+
+    selector {
+
+                        property: value;
+
+
+         }
+  
+</pre>
+
+  
+  
+<h2>Selectors</h2>
+ 
+<p class="HTML-para4">Selectors determine which elements to target with CSS styles. There are various types of selectors:</p>
+  
+  
+<br>
+<div class="HTML-container"> 
+<ul>
+    
+<li>Element selector: targets elements by their HTML tag name, e.g., 
+<code>p</code> selects all paragraphs.
+<li>Class selector: targets elements with a specific class attribute, e.g., 
+<code>.highlight</code> selects all elements with class "highlight".
+<li>ID selector: targets an element with a specific ID attribute, e.g., 
+<code>#intro</code> selects the element with ID "intro".</li>
+    
+<li>...and more (e.g., attribute selectors, pseudo-classes, etc.)</li>
+  
+</ul>
+</div>
+
+
+<h2>Properties and Values</h2>
+ 
+<div class="HTML-para1">
+<p>Properties specify the aspect of an element to be styled, and values define how the property should be applied.</p>
+  
+  
+</div>
+
+<h3>Example:</h3>
+<div class="HTML-2">
+<pre>
+<code>color: navy;</code> sets the text color to navy,
+<code>background-color: yellow;</code> sets the background color to yellow.
+</pre>
+  
+  
+</div>
+
+<h2>Cascading and Specificity</h2>
+ 
+<div class="HTML-para2"> 
+<p>CSS follows the "cascading" principle, where multiple styles can be applied to the same element, and the final result is determined by a set of rules known as specificity.</p>
+  
+  
+<p>If multiple rules conflict, the most specific rule takes precedence. Inline styles have the highest specificity, followed by IDs, classes, and element selectors.</p>
+  
+ 
+</div>
+
+<h2>Conclusion</h2>
+ 
+<div class="HTML-para3"> 
+<p>CSS is a powerful tool for controlling the visual appearance of web pages. By using CSS, you can make your HTML documents more engaging and user-friendly.
+</p>
+    
+<p>Remember to experiment and explore the various CSS properties and selectors to create unique and compelling designs!
+</p>
+
+</div>
+
+ <div class="sticker">
+    <div class="book">
+	<div class="book__pg-shadow"></div>
+	<div class="book__pg"></div>
+	<div class="book__pg book__pg--2"></div>
+	<div class="book__pg book__pg--3"></div>
+	<div class="book__pg book__pg--4"></div>
+	<div class="book__pg book__pg--5"></div>
+</div>
+  </div>
+
+<HR width="100%" align="center" size=7 color="Aqua"><BR>
+
+<marquee style="z-index:2;font-family:Comic Sans MS;font-size:20pt;color:Aqua;height:40px;scrollamount:50">
+RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+</marquee>
+</body>
+
+</html>

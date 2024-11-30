@@ -1,0 +1,455 @@
+<html>
+<head>
+<title>HTML Tags Explanation</title>
+<link rel="icon" href="Logo.png" type="image/png">
+<style>
+Table{background-repeat:no-repeat}
+A:link{color:red;display:inline-block;text-decoration:none}
+A:hover{color:Aqua;}
+TD{
+      padding-left:45px;
+      padding-top:15px;
+}
+TR{
+      padding-left:45px;
+      padding-top:15px;
+}
+ 
+p{padding-left:15px} 
+
+h2{
+      font-family: 'Arial';
+      font-size: 20px;
+} 
+
+ body {
+      background-image: url('education2.jpeg');
+      background-repeat:repeat;
+      background-size: contain;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    
+    @keyframes zooming {
+      0% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+      50% {
+        transform: translate(15%, 7%) scale(1.2); opacity:1;
+      }
+      
+      100% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+
+    }
+    .sticker-HTML img {
+      height: 100%;
+    }
+
+
+    
+
+    .sticker-HTML {
+      position: fixed;
+      bottom: 50px;
+      left: 15px;
+      height: 70px;
+      animation: zooming 4s infinite;
+    }
+
+
+    .HTML-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.20);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 14px;
+      line-height: 15px;
+      color: white;
+      text-decoration: none;
+    }
+    .HTML {
+      display: inline-block;
+      width: 1200px;
+      height: 250px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    @keyframes zoom-1 {
+      0% {
+        transform: translate(5%, 30%) scale(0); opacity:0;
+      }
+      
+      50% {
+        transform: translate(5%, 30%) scale(1); opacity:1;
+      }
+      
+      100% {
+        transform: translate(5%, 30%) scale(1); opacity:1;
+      }
+    }
+
+    .sticker {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 100px;
+    }
+
+    .sticker img {
+      height: 100%;
+    }
+
+
+
+:root {
+	--hue: 16;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
+	--primary-l: hsl(var(--hue),90%,65%);
+	--primary-d: hsl(var(--hue),90%,45%);
+	--white: hsl(var(--hue),10%,100%);
+	--white-d: hsl(var(--hue),10%,45%);
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body {
+	display: grid;
+	place-items: center;
+}
+.book,
+.book__pg-shadow,
+.book__pg {
+	animation: cover 7s ease-in-out infinite;
+}
+.book {
+	background-color: var(--primary-l);
+	border-radius: 0.25em;
+	box-shadow:
+		0 0.25em 0.5em hsla(0,0%,0%,0.3),
+		0 0 0 0.25em var(--primary) inset;
+	padding: 0.25em;
+	perspective: 37.5em;
+	position: relative;
+	width: 8em;
+	height: 6em;
+	transform: translate3d(0,0,0);
+	transform-style: preserve-3d;
+}
+.book__pg-shadow,
+.book__pg {
+	position: absolute;
+	left: 0.25em;
+	width: calc(50% - 0.25em);
+}
+.book__pg-shadow {
+	animation-name: shadow;
+	background-image: linear-gradient(-45deg,hsla(0,0%,0%,0) 50%,hsla(0,0%,0%,0.3) 50%);
+	filter: blur(0.25em);
+	top: calc(100% - 0.25em);
+	height: 3.75em;
+	transform: scaleY(0);
+	transform-origin: 100% 0%;
+}
+.book__pg {
+	animation-name: pg1;
+	background-color: var(--white);
+	background-image: linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	height: calc(100% - 0.5em);
+	transform-origin: 100% 50%;
+}
+.book__pg--2,
+.book__pg--3,
+.book__pg--4 {
+	background-image:
+		repeating-linear-gradient(hsl(var(--hue),10%,10%) 0 0.125em,hsla(var(--hue),10%,10%,0) 0.125em 0.5em),
+		linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 2.5em 4.125em, 100% 100%;
+}
+.book__pg--2 {
+	animation-name: pg2;
+}
+.book__pg--3 {
+	animation-name: pg3;
+}
+.book__pg--4 {
+	animation-name: pg4;
+}
+.book__pg--5 {
+	animation-name: pg5;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,30%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+}
+
+/* Animations */
+@keyframes cover {
+	from, 5%, 45%, 55%, 95%, to {
+		animation-timing-function: ease-out;
+		background-color: var(--primary-l);
+	}
+	10%, 40%, 60%, 90% {
+		animation-timing-function: ease-in;
+		background-color: var(--primary-d);
+	}
+}
+@keyframes shadow {
+	from, 10.01%, 20.01%, 30.01%, 40.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0.2) rotateY(90deg);
+	}
+	10%, 20%, 30%, 40%, 50%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	50.01%, 60.01%, 70.01%, 80.01%, 90.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	60%, 70%, 80%, 90%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+}
+@keyframes pg1 {
+	from, to {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.4deg);
+	}
+	10%, 15% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	20%, 80% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	85%, 90% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+}
+@keyframes pg2 {
+	from, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	5%, 10% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	20%, 25% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	30%, 70% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	75%, 80% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	90%, 95% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+}
+@keyframes pg3 {
+	from, 10%, 90%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	15%, 20% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	30%, 35% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	40%, 60% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	65%, 70% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	80%, 85% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+}
+@keyframes pg4 {
+	from, 20%, 80%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	25%, 30% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	40%, 45% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	50% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	55%, 60% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	70%, 75% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+}
+@keyframes pg5 {
+	from, 30%, 70%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+	35%, 40% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0deg);
+	}
+	50% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.6deg);
+	}
+	60%, 65% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+}
+
+</style>
+</head>
+
+<body bgcolor="white" Link="red" vlink="red" alink="fuchsia">
+<Table width="100%" height=5 bgcolor="black">
+<TR><TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="right"><Img src="phone.jpeg" align="bottom" width=25 height=25>&nbsp9935025968</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" color="white" size=2>
+<p align="right"><A href="https://www.facebook.com"><Img src="facebook.jpeg" align="bottom" width=25 height=25>&nbsp&nbsp&nbsp&nbsp</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" size=2>
+<p align="left"><A href="https://www.gmail.com"><Img src="gmail.jpeg" align="bottom" width=30 height=30>&nbsp</p>
+</TD>
+</font>
+</TR></Table>
+<HR>
+<Table width="100%" height=35 bgcolor="black">
+<TR>
+<TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="left"><Img src="top-logo.jpeg" align="bottom" width=100 height=90></p>
+</TD>
+<TD width="100%" height=5 valign="middle">
+<font face="Arial" color="white" size=2>
+<p align="center">
+<A href="index.html">Home</A>&nbsp I &nbsp
+<A href="Aboutme.html">About Us</A>&nbsp I &nbsp
+<A href="HTML.html">HTML</A>&nbsp I &nbsp
+HTML-Tags&nbsp I &nbsp
+<A href="Attributes.html">Attributes</A>&nbsp I &nbsp
+<A href="CSS.html">CSS</A>&nbsp I &nbsp
+<A href="CSSproperties.html">CSS-Properties</A>&nbsp I &nbsp
+<A href="Java.html">Java</A>&nbsp I &nbsp
+<A href="Python.html">Python</A>&nbsp I &nbsp
+<A href="Comment.html">Comments</A></font>
+</TD></TR></Table>
+
+<h1 align="center"><font color="Teal"><u>HTML Tags</u></font></h1>
+
+
+<div class="HTML">
+<p>To start learning HTML you need to start with HTML tags, there are various tags that we must consider and know about while starting to code in HTML.</p><p><strong>HTML Tags:</strong> HTML tags are the&nbsp;keywords that are used to produce web pages in various formats. Opening tags and closing tags are found in the majority of tags. The concluding tags contain a forward slash (/), while the language of the beginning tags is the same. Certain tags don&#8217;t need to be closed.</p>
+</div>
+<p><strong>A to Z HTML Tags:</strong> The complete list of HTML tags is given below.</p>
+<Table width="100%"><thead><TR><TH width="20%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tags</TH><TH width="60%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description</TH><TH width="20%" align="Left">Syntax</TH></TR></thead></Table>
+<Table class="HTML-container"><tbody><TR><TD><a html-doctypes/>!DOCTYPE html</TD><TD>According to the HTML specification or standards, every HTML document requires a document type declaration.</TD><TD>&lt; !DOCTYPE html ></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/8c359013-f2b2-41e7-ba95-931e36070300</div></div></TD></TR><TR><TD><a html-abbr-tag/>abbreviation</TD><TD>The abbreviation tag in HTML is used to define the abbreviation or short form of an element.</TD><TD>&lt;abbr title=&#8221; &#8220;> &#8230; &lt;/abbr></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/3342d775-914f-491b-85a4-edce11526f20</div></div></TD></TR><TR><TD><a html-acronym-tag/>acronym</TD><TD>The acronym tag in HTML is used to define the acronym that gives useful information to browsers, translation systems, and search engines.</TD><TD>&lt;acronym title=&#8221; &#8220;> &#8230; &lt;/acronym></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/4ac7eaa7-949b-424b-ac20-664156d65751</div></div></TD></TR><TR><TD><a html-address-tag/>address</TD><TD>The address tag in HTML indicates the contact information of a person or an organization.</TD><TD>&lt;address> &#8230; &lt;/address></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/4ac7eaa7-949b-424b-ac20-664156d65751</div></div></TD></TR><TR><TD><a html-a-tag/>anchor</TD><TD>The anchor tag in HTML is used to create a hyperlink on the webpage.</TD><TD>&lt;a herf=&#8221; &#8220;> &#8230;&lt;/a></TD><TD><div class=practiceLinkDiv-banner><div class=redirect></div></div></TD></TR><TR><TD><a html-applet-tag/>applet</TD><TD>The applet tag in HTML was used to embed Java applets into any HTML document, discontinued starting from HTML 5.</TD><TD>&lt;applet>&#8230;.&lt;/applet></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/eb8fece5-013d-401d-9e49-f2b9751c447d</div></div></TD></TR><TR><TD><a html-area-tag/>area</TD><TD>This area tag is used in an HTML document to map a portion of an image to make it clickable by the end-user.</TD><TD>&lt;area></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/2baafdb8-2565-400c-99f2-429da60d5edf</div></div></TD></TR><TR><TD><a html5-article-tag/>article</TD><TD>The &lt;article> tag is one of the new sectioning element in HTML5. The tag is used to represent an article.</TD><TD>&lt;article>..&lt;/article></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/ec315711-c30a-4269-aa20-155140feb255</div></div></TD></TR><TR><TD><a html5-aside-tag/>aside</TD><TD>The &lt;aside> tag is used to describe the main object of the web page in a shorter way like a highlighter.</TD><TD>&lt;aside>..&lt;/aside></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/bee6ba9f-7ff7-4129-9b15-5fc00dea85d8</div></div></TD></TR><TR><TD><a html5-audio/>audio</TD><TD>It is a useful tag if you want to add audio such as songs, interviews, etc. on your webpage.</TD><TD>&lt;audio>..&lt;/audio></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/cf08e6ce-3a60-4712-ab76-9553e7ca621a</div></div></TD></TR><TR><TD><a html-base-tag/>base</TD><TD>The HTML base tag is used to specify a base URI, or URL, for relative links. This URL will be the base URL for every link on the page.</TD><TD>&lt;base href = &#8221; &#8220;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/b176d4c5-fbf3-47ca-a81b-4c5d0f92af5a</div></div></TD></TR><TR><TD><a html-basefont-tag/>basefont</TD><TD>This tag is used to set the default text-color, font-size, & font-family of all the text in the browser. Not supported in HTML5.</TD><TD>&lt;basefont></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/3f49f812-4c1d-49ca-a28f-d5a94c3458e6</div></div></TD></TR><TR><TD><a html-5-bdi-tag/>bdi</TD><TD>The bdi tag refers to Bi-Directional Isolation. It differentiates a text from other text that may be formatted in a different direction.</TD><TD>&lt;bdi> &#8230; &lt;/bdi></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/56b68eca-4c08-4bb6-a213-6ae91507c98e</div></div></TD></TR><TR><TD><a html-bdo-tag/>bdo</TD><TD>The bdo stands for Bi-Directional Override. This tag is used to specify the text direction or used to change the current direction.</TD><TD>&lt;bdo dir> Contents&#8230; &lt;/bdo></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/1eedb320-3f03-4604-b7be-92428a429e6b</div></div></TD></TR><TR><TD><a html-bgsound-tag/>bgsound</TD><TD>The bgsound tag is used to play the soundtrack in the background.</TD><TD>&lt;bgsound src=&#8221;&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/884628bb-8082-47d6-9980-18bfc1b1099f</div></div></TD></TR><TR><TD><a html-big-tag/>big</TD><TD>The big tag in HTML is used to increase the selected text size by one larger than the surrounding text. In HTML 5.</TD><TD>&lt;big> Contents&#8230; &lt;/big></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/fb04bf93-e46a-4b0c-b7e7-4f1526c32cef</div></div></TD></TR><TR><TD><a html-blockquote-tag/>blockquote</TD><TD>The blockquote tag in HTML is used to display the long quotations (a section that is quoted from another source).</TD><TD>&lt;blockquote> Contents&#8230; &lt;/blockquote></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/1172477a-5475-4316-a513-b24530b36b42</div></div></TD></TR><TR><TD><a html-body-tag/>body</TD><TD>The body tag in HTML is used to define the main content present inside an HTML page.</TD><TD>&lt;body> Contents&#8230; &lt;/body></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/3e50b8b9-02b7-472d-beb0-118ca8cd66f0</div></div></TD></TR><TR><TD><a html-b-tag/>bold</TD><TD>The bold tag in HTML is used to specify the bold text without any extra importance.</TD><TD>&lt;b>&#8230; &lt;/b></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/2b6b5739-75d5-41e2-b3c8-a7376c80b312</div></div></TD></TR><TR><TD><a html-br-tag/>break</TD><TD>The break tag inserts a single carriage return or breaks in the document. This element has no end tag.</TD><TD>&lt;br></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/b40f4dd0-e365-493f-8861-d17630662e80</div></div></TD></TR><TR><TD><a html-button-tag/>button</TD><TD>The button tag in HTML is used to define the clickable button. &lt;button> tag is used to submit the content.</TD><TD>&lt;button type = &#8220;button&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/c8885468-2806-4343-9a74-cf3c5819329d</div></div></TD></TR><TR><TD><a html-caption-tag/>caption</TD><TD>The caption tag is used to specify the caption of a table. Only one caption can be specified for one table.</TD><TD>&lt;caption align = &#8220;value&#8221;>&lt;/caption></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/b15cf3aa-162c-4cad-8dc3-2072db70539d</div></div></TD></TR><TR><TD><a html-canvas-tag/>canvas</TD><TD>It can be used to draw paths, boxes, texts, gradients, and add images.</TD><TD>&lt;canvas id = &#8220;script&#8221;> Contents&lt;/canvas></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/1e827cf7-6b58-499d-89f8-a612c0f14823</div></div></TD></TR><TR><TD><a html-center-tag/>center</TD><TD>The center tag in HTML is used to set the alignment of text in the center. Not supported in HTML5.</TD><TD>&lt;center> Contents.&lt;/center></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/72a3f541-063d-4720-bc7d-0ca776faaa49</div></div></TD></TR><TR><TD><a html-cite-tag/>cite</TD><TD>The cite tag in HTML is used to define the title of a work. It displays the text in italic format.</TD><TD>&lt;cite>Content&lt;/cite></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/15b9917f-ea49-4813-b695-4f9f83a7e281</div></div></TD></TR><TR><TD><a html-code-tag/>code</TD><TD>The code tag in HTML is used to define the piece of computer code.</TD><TD>&lt;code>Contents&lt;/code></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/d02a0558-5a22-4aa7-ba0d-360d00e2dca1</div></div></TD></TR><TR><TD><a html-colgroup-tag/>colgroup</TD><TD>It is useful for applying styles to entire columns, instead of repeating the styles for each column, and for each row</TD><TD>&lt;colgroup> Column lists &lt;/colgroup></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/c0a600b3-a654-4326-8a0d-56ec00986c99</div></div></TD></TR><TR><TD><a html-col-tag/>column</TD><TD>The col tag in HTML is used to set the column properties for each column within a colgroup tag.</TD><TD>&lt;col attribute = &#8220;value&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/84a095ca-a8f0-486b-b7e8-09f01f7702b5</div></div></TD></TR><TR><TD><a html-comments/>comment</TD><TD>The comment tag is used to insert comments in the HTML code.</TD><TD>&lt;!></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/cca7d706-a84d-4564-90d6-43ee41658ce0</div></div></TD></TR><TR><TD><a html-data-tag/>data</TD><TD>The data element gives an address to a given content with a machine-readable translator.</TD><TD>&lt;data value=&#8221;&#8221;> Contents &lt;/data></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/1a0ec5c9-3a3a-4040-8fa7-b3e97fb71bf2</div></div></TD></TR><TR><TD><a html-datalist-tag/>datalist</TD><TD>The datalist tag is used to provide autocomplete feature & used with an input tag so that users can easily fill the data in the forms using select the data.</TD><TD>&lt;datalist>Contents&lt;/datalist></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/b52cb9c9-96c5-4cd2-b0b5-29c890a43c71</div></div></TD></TR><TR><TD><a html-dd-tag/>dd</TD><TD>The dd tag is used to denote the description or definition of an item in a description list.</TD><TD>&lt;dd>Contents&lt;/dd></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/1a0ec5c9-3a3a-4040-8fa7-b3e97fb71bf2</div></div></TD></TR><TR><TD><a html-dfn-tag/>define</TD><TD>The define tag in HTML represents the definition element and is used to represent a defining instance in HTML.</TD><TD>&lt;dfn>Contents&lt;/dfn></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/02aa783f-ce0a-4387-8005-b7a323eedaf4</div></div></TD></TR><TR><TD><a html-del-tag/>delete</TD><TD>Delete tag is used to mark a portion of text which has been deleted from the document.</TD><TD>&lt;del>Contents&lt;/del></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/bfa5ead6-6e8b-4726-8431-60b71a75e7b8</div></div></TD></TR><TR><TD><a html5-details-tag/>details</TD><TD>This tag is used to create an interactive widget that the user can open or close.</TD><TD>&lt;details>Contents&lt;/details></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/f87f1e56-3a9c-4f95-9630-7190025880ba</div></div></TD></TR><TR><TD><a html5-dialog-tag/>dialog</TD><TD>This tag is used to create a popup dialog and models on a web page. This tag is new in HTML5.</TD><TD>&lt;dialog open> Contents&#8230; &lt;/dialog></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/7b8a656c-151e-470d-bf55-d30545f661f7</div></div></TD></TR><TR><TD><a html-dir-tag/>dir</TD><TD>The dir tag is used to make a list of directory titles. It is not supported in HTML 5 &lt;ul> or CSS are used instead of &lt;dir> tag.</TD><TD>&lt;dir> Lists&#8230; &lt;/dir></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/874df67b-bffa-46f3-9e00-f80e4545d71b</div></div></TD></TR><TR><TD><a div-tag-html/>div</TD><TD>The div tag is used in HTML to make divisions of content in the web page (text, images, header, footer, navigation bar, etc).</TD><TD>&lt;div>Content&lt;/div></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/8438f64f-6fa1-4b5a-b870-72476ebab7b1</div></div></TD></TR><TR><TD><a html-dl-tag/>dl</TD><TD>The dl tag in HTML is used to represent the description list. In HTML4.1, it defines definition list and in HTML5, it defines description list.</TD><TD>&lt;dl> Contents&#8230; &lt;/dl></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/a474fa79-b809-4ffc-800f-dc28352d2af5</div></div></TD></TR><TR><TD><a html-dt-tag/>dt</TD><TD>The dt tag in HTML is used to specify the description list. It is used inside the &lt;dl> element. It is usually followed by a &lt;dd> tag.</TD><TD>&lt;dt> Content&#8230; &lt;/dt></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/fc66bf22-dbb9-4919-b332-ac25c9ea9c27</div></div></TD></TR><TR><TD><a html-embed-tag/>embed</TD><TD>It is used as a container for embedding plug-ins such as flash animations.</TD><TD>&lt;embed attributes></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/fc66bf22-dbb9-4919-b332-ac25c9ea9c27</div></div></TD></TR><TR><TD><a html5-fieldset-tag/>fieldset</TD><TD>The fieldset tag in HTML5 is used to make a group of related elements in the form, and it creates the box over the elements.</TD><TD>&lt;fieldset>Contents&lt;/fieldset></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/8d82f9b2-eb1d-405b-9de9-53f0bfb70b7f</div></div></TD></TR><TR><TD><a html5-figcaption-tag/>figcaption</TD><TD>The figurecaption tag in HTML is used to set a caption to the figure element in a document. This tag is new in HTML5.</TD><TD>&lt;figcaption> Figure caption &lt;/figcaption></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/08df89d6-49d1-42c0-b87e-a11a5673f7c6</div></div></TD></TR><TR><TD><a html5-figure-tag/>figure</TD><TD>The figure tag in HTML is used to add self-contained content like illustrations, diagrams, photos, or codes listed in a document.</TD><TD>&lt;figure> Image content&#8230; &lt;/figure></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/14302f74-3ab1-44d8-8735-c14189e3a89a</div></div></TD></TR><TR><TD><a html-font-tag/>font</TD><TD>The font tag in HTML plays an important role in the web page to create an attractive and readable web page.</TD><TD>&lt;font attribute = &#8220;value&#8221;> Content &lt;/font></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/988c87fd-00a8-4c05-9889-c4d2ac5ee772</div></div></TD></TR><TR><TD><a html5-footer-tag/>footer</TD><TD>The footer tag in HTML is used to define a footer of HTML document. This section contains the footer information.</TD><TD>&lt;footer> &#8230; &lt;/footer></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/09e0b34a-630b-4e82-8a5a-6ee67decaa7a</div></div></TD></TR><TR><TD><a html-form-tag/>form</TD><TD>This form is used basically for the registration process, logging into your profile on a website or creating your profile on a website, etc </TD><TD>&lt;form> Form Content&#8230; &lt;/form></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/6968cec2-cf34-43a7-bac7-c48a492ac57a</div></div></TD></TR><TR><TD><a html-frame-tag/>frame</TD><TD>HTML Frames are used to divide the web browser window into multiple sections. Not supported in HTML5.</TD><TD>&lt;frame/></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/856360ac-a0d4-4f84-99d8-5b7e3d092154</div></div></TD></TR><TR><TD><a html-frameset-tag/>frameset</TD><TD>The frameset element contains one or more frame elements. It is used to specify the number of rows and columns in a frameset with their pixel of spaces.</TD><TD>&lt;frameset cols = &#8220;pixels|%|*&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/856360ac-a0d4-4f84-99d8-5b7e3d092154</div></div></TD></TR><TR><TD><a html-head-tag/>head</TD><TD>The head tag in HTML is used to define the head portion of the document which contains information related to the document.</TD><TD>&lt;head>&#8230;&lt;/head></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/142b2a94-1c99-4f1d-aa8d-a91c7bf30945</div></div></TD></TR><TR><TD><a html-5-header-tag/>header</TD><TD>The header tag is used to contain the information related to the title and heading of the related content.</TD><TD>&lt;header> &#8230;&lt;/header></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/416900f9-168c-482b-808f-34227d545506</div></div></TD></TR><TR><TD><a html-heading/>heading</TD><TD>An HTML heading tag is used to define the headings of a page. These 6 heading elements are h1, h2, h3, h4, h5, and h6; with h1 being the highest level and h6 being the least.</TD><TD>&lt;h1>Heading1&lt;/h1>&lt;h2>Heading2&lt;/h2></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/08de951d-a1a6-464d-8b2e-9101b8d6974f</div></div></TD></TR><TR><TD><a html-hgroup-tag/>hgroup</TD><TD>The hgroup tag in HTML is used to wrap one or more heading elements from &lt;h1> to &lt;h6>, such as the headings and sub-headings.</TD><TD>&lt;hgroup> &#8230; &lt;/hgroup></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/08a3f91f-b2e5-44a3-855c-3bb90d3cb9ae</div></div></TD></TR><TR><TD><a html-hr-tag/>hr</TD><TD>The hr tag in HTML stands for horizontal rule and is used to insert a horizontal rule.</TD><TD>&lt;hr></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/aff72766-3d13-43ed-8f2b-42fcd96537e6</div></div></TD></TR><TR><TD><a html-html-tag/>html</TD><TD>The html tag in HTML is used to define the root of HTML and XHTML documents.</TD><TD>&lt;html> Contents &lt;/html></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/3760b6df-3bcb-4c35-a221-3857a0b05331</div></div></TD></TR><TR><TD><a html-iframes/>Iframes</TD><TD>The iframe tag defines a rectangular region within the document in which the browser can display a separate document.</TD><TD>&lt;iframe src=&#8221;URL&#8221; title=&#8221;description&#8221;>&lt;/iframe></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/2ec908b1-af76-4d23-b99e-07830f7cd340</div></div></TD></TR><TR><TD><a html-images/>image</TD><TD>HTML Image, how to add the image in HTML. In earlier times, the web pages only contains textual content, which made them appear quite boring and uninteresting.</TD><TD>&lt;img src=&#8221;url&#8221; alt=&#8221;some_text&#8221; width=&#8221;&#8221; height=&#8221;&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/0aeb35b6-8a61-4886-9017-50f0fd8175ba</div></div></TD></TR><TR><TD><a html-input-tag/>input</TD><TD>The input tag is used within &lt; form> element to declare input controls that allow users to input data.</TD><TD>&lt;input type = &#8220;value&#8221; &#8230;. /></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/6884f9fa-b64c-4c8a-9cef-490adf449728</div></div></TD></TR><TR><TD><a html-ins-tag/>ins</TD><TD>The ins tag is typically used to mark a range of text that has been added to the document.</TD><TD>&lt;ins> Contents&#8230; &lt;/ins></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/787de785-5956-40ae-98fb-9c0c038c5828</div></div></TD></TR><TR><TD><a html-isindex-tag/>isindex</TD><TD>The index tag is used to query any document through a text field.</TD><TD>&lt;isindex prompt=&#8221;search&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/7e101a37-222f-466e-b9a7-efcf010e6f65</div></div></TD></TR><TR><TD><a html-i-tag/>italic</TD><TD>This tag is generally used to display a technical term, phrase, the important word in a different language.</TD><TD>&lt;i> Contents&lt;/i></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/aba6bcf1-8106-405f-a5db-55971c1c7196</div></div></TD></TR><TR><TD><a html-kbd-tag/>kbd</TD><TD>The text enclosed within kbd tag is typically displayed in the browsers default monospace font.</TD><TD>&lt;kbd> text content &#8230; &lt;/kbd></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/fd6d3fb5-7024-45d9-b6fd-624df448dd0e</div></div></TD></TR><TR><TD><a html-keygen-tag/>keygen</TD><TD>The keygen tag in HTML is used to specify a key-pair generator field in a form. When a form is submitted then two keys are generated, the private key and a public key.</TD><TD>&lt;keygen name = &#8220;name&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/ee647689-73fd-46db-bb29-7473f0f6ac00</div></div></TD></TR><TR><TD><a html-label-tag/>label</TD><TD>The label tag in HTML is used to provide a usability improvement for mouse users.</TD><TD>&lt;label> form content&#8230; &lt;/label></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/8aec82cc-1582-45f3-bdc3-5c55588d5342</div></div></TD></TR><TR><TD><a html-legend-tag/>legend</TD><TD>The legend tag is used to define the title for the child contents. The legend elements are the parent element.</TD><TD>&lt;legend> Text &lt;/legend></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/ac2699e9-8260-4c77-81de-eb816ba637be</div></div></TD></TR><TR><TD><a html-li-tag/>list</TD><TD>The list tag in HTML is used to define the list item in an HTML document. It is used within an Ordered List &lt;ol> or Unordered List &lt;ul>.</TD><TD>&lt;li> List Items &lt;/li></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/10315c0e-506e-493f-9f09-ebba2021110f</div></div></TD></TR><TR><TD><a html-main-tag/>main</TD><TD>The main tag is used to give the main information of a document. The content inside the &lt;main> element should be unique for the document.</TD><TD>&lt;main>Coontents&lt;/main></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/47713a7a-0f01-43a0-9c2f-4feded9b8c93</div></div></TD></TR><TR><TD><a html5-mark-tag/>mark</TD><TD>The mark tag in HTML is used to define the marked text. It is used to highlight the part of the text in a paragraph.</TD><TD>&lt;mark> Contents&#8230; &lt;/mark></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/670592ce-96ed-423d-8dbf-79e8bbb000c0</div></div></TD></TR><TR><TD><a html-marquee-tag/>marquee</TD><TD>The marquee tag in HTML is used to create scrolling text or images on a webpage. It scrolls either horizontally or vertically.</TD><TD>&lt;marquee>Contents&lt;/marquee></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/c3ce613f-99de-43ee-b8d2-f2ff5d34c592</div></div></TD></TR><TR><TD><a html-menuitem-tag/>menuitem</TD><TD>The menuitem tag is used to define a command or menu that the user can utilize from the popup item. Not supported in HTML5.</TD><TD>&lt;menuitem label=&#8221;&#8221; icon=&#8221;&#8221; type> &lt;/menuitem></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/e557bf2b-d58c-414c-92ed-c08f0d309602</div></div></TD></TR><TR><TD><a html-meta-tag/>meta</TD><TD>The meta tag is regularly used to give watchwords, portrayals, author data, and other metadata that might be utilized by the program to deliver the document accurately or in simple words, it provides important information about a document.</TD><TD>&lt;meta attribute-name=&#8221;value&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/0d4d528e-2aca-40aa-b6b8-ddb84f504c2a</div></div></TD></TR><TR><TD><a html5-meter-tag/>meter</TD><TD>It is used to define the scale for measurement in a well-defined range and also supports a fractional value.</TD><TD>&lt;meter attributes&#8230;> &lt;/meter></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/40df23f7-4da4-45b0-9bd5-7787e465d519</div></div></TD></TR><TR><TD><a html-nav-tag/>nav</TD><TD>The nav tag is used for declaring the navigational section in HTML documents. Websites typically have sections dedicated to navigational links, which enables users to navigate the site.</TD><TD>&lt;nav> Links&#8230; &lt;/nav></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/0fcec69a-4f9b-4f78-b298-7cb0d0582213</div></div></TD></TR><TR><TD><a html-nobr-tag/>nobreak</TD><TD>The no break tag is used to create a single line text, that does not matter how long the statement is, this tag is used with &lt;wbr> tag.</TD><TD>&lt;nobr> Statement &lt;/nobr></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/d4b329c3-62db-451c-b8a4-b1f44d05e345</div></div></TD></TR><TR><TD><a html-noembed-tag/>noembed</TD><TD>The noembed tag is used to show that the browser is not supported by &lt;embed> tag.</TD><TD>&lt;noembed> Element &lt;/noembed></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/b7d7d48c-3e55-4d53-9647-bfccef591b12</div></div></TD></TR><TR><TD><a html-noscript-tag/>noscript</TD><TD>The noscript tag in HTML is used to display the text for those browsers which does not support the script tag or the browsers disable the script by the user.</TD><TD>&lt;noscript> Contents&#8230; &lt;/noscript></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/9934890b-4c44-4e05-b040-6feba8a0c63b</div></div></TD></TR><TR><TD><a html-object-tag/>object</TD><TD>The object tag is an HTML tag used to display multimedia like audio, videos, images, PDFs, and Flash on web pages.</TD><TD>&lt;object>&#8230;&lt;/object></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/c2650a7f-67ac-4e8a-b059-9df42924dade</div></div></TD></TR><TR><TD><a html-optgroup-tag/>optgroup</TD><TD>This tag is used to create a group of the same category options in a drop-down list.</TD><TD>&lt;optgroup>&#8230;&lt;/optgroup></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/25c7c7d6-5ced-47a1-8488-74c666a54179</div></div></TD></TR><TR><TD><a html-option-tag/>option</TD><TD>The option tag in HTML is used to choose an option from a Drop-Down menu.</TD><TD>&lt;option> Contents&#8230; &lt;/option></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/d7e289a1-a7b0-4925-949c-d0525fb6426b</div></div></TD></TR><TR><TD><a html-output-tag/>output</TD><TD>The output tag in HTML is used to represent the result of a calculation performed by the client-side script such as JavaScript.</TD><TD>&lt;output> Results&#8230; &lt;/output></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/01fa63ff-0a35-4b55-9ed0-4346915ea1c7</div></div></TD></TR><TR><TD><a html-paragraph/>paragraphs</TD><TD>The &lt;p> tag in HTML defines a paragraph. These have both opening and closing tags.</TD><TD>&lt;p> Content &lt;/p></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/f65a6826-6bd9-4f2a-9f14-c66f56eee3dc</div></div></TD></TR><TR><TD><a html-param-tag/>param</TD><TD>The param tag in HTML is used to define a parameter for plug-ins which is associated with &lt;object> element.</TD><TD>&lt;param name=&#8221;&#8221; value=&#8221;&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/9ec2e81f-f82c-46f3-a8fc-fab89dd824a0</div></div></TD></TR><TR><TD><a html-phrase-tag/>phrase</TD><TD>In HTML, phrase tag is used to indicate the structural meaning of a block of text.</TD><TD>&lt;em> Text Content &lt;/em></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/57aea2f7-20c9-41c5-a3b8-c4bff097625b</div></div></TD></TR><TR><TD><a html-pre-tag/>pre</TD><TD>The pre tag in HTML is used to define the block of preformatted text which preserves the text spaces.</TD><TD>&lt;pre> Contents&#8230; &lt;/pre></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/8a82b6f3-1a74-411a-8349-c09d8fef290b</div></div></TD></TR><TR><TD><a html-5-progress-tag/>progress</TD><TD>It is used to represent the progress of a task. It is also defined how much work is done and how much is left to download a thing.</TD><TD>&lt;progress attributes&#8230;> &lt;/progress></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/0e3a00dd-58fd-4824-80da-d99e4e07d051</div></div></TD></TR><TR><TD><a html-q-tag/>q</TD><TD>The q tag is a standard quotation tag and is used for short quotations.</TD><TD>&lt;q> Contents&#8230; &lt;/q></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/a2232354-3234-46b3-8a8e-553552588d62</div></div></TD></TR><TR><TD><a html5-rp-tag/>rp</TD><TD>The rp tag in HTML is used to provide parentheses around a ruby main text which defines the information.</TD><TD>&lt;rp>[&lt;/rp> Explaination&#8230; &lt;rp>]&lt;/rp></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/14a826c4-6c7c-42c2-9bae-81acb8c036dd</div></div></TD></TR><TR><TD><a html5-rt-tag/>rt</TD><TD>The rt tag in HTML is used to define the explanation of the ruby annotation which is a small text, attached to the main text.</TD><TD>&lt;rt> Explanation&#8230; &lt;/rt></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/652ad943-4cb5-47b8-b8fd-331b6a20085a</div></div></TD></TR><TR><TD><a html5-ruby-tag/>ruby</TD><TD>The ruby tag in HTML is used to specify the ruby annotation which is a small text, attached with the main text to specify the meaning of the main text.</TD><TD>&lt;ruby attributes> Contents&#8230; &lt;/ruby></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/bde0ad4c-6c41-4536-83d7-bcf4ae2094d2</div></div></TD></TR><TR><TD><a html-s-tag/>s</TD><TD>This tag is used to specify that the text content is no longer correct or accurate. This tag is similar but slightly different from &lt;del> tag.</TD><TD>&lt;s> Contents&#8230; &lt;/s></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/dfb08f74-a158-4e56-a78f-268f62ff2051</div></div></TD></TR><TR><TD><a html-samp-tag/>samp</TD><TD>It is a phrase tag used to define the sample output text from a computer program.</TD><TD>&lt;samp> Contents&#8230; &lt;/samp></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/3032e433-f18d-4d43-9235-af1f13571b10</div></div></TD></TR><TR><TD><a html-script-tag/>script</TD><TD>The script tag in HTML is used to define the client-side script.</TD><TD>&lt;script> Script Contents&#8230; &lt;/script></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/7885d953-3e8d-4a5e-b2e1-6c833e56ad71</div></div></TD></TR><TR><TD><a html-section-tag/>section</TD><TD>Section tag defines the section of documents such as chapters, headers, footers, or any other sections.</TD><TD>&lt;section> Section Contents &lt;/section></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/d44504ce-d72c-444f-94d6-84501f6a40ab</div></div></TD></TR><TR><TD><a html-small-tag/>small</TD><TD>The small tag in HTML is used to set small font sizes. It decreases the font size by one size (from medium to small, from x-large to large).</TD><TD>&lt;small> Contents&#8230; &lt;/small></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/b6fe48cc-5e42-4547-888c-0f2278f76b15</div></div></TD></TR><TR><TD><a html-source-tag/>source</TD><TD>The source tag in HTML is used to attach multimedia files like audio, video, and pictures.</TD><TD>&lt;source src=&#8221;&#8221; type=&#8221;&#8221;>&nbsp;&lt;/source></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/69384add-947c-473a-a020-2d6da2f7fec6</div></div></TD></TR><TR><TD><a html-spacer-tag/>spacer</TD><TD>The spacer tag is used to create some white space. Not-supporte in HTML5 .</TD><TD>&lt;spacer type=&#8221;&#8221; size=&#8221;&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/b070be34-acb8-4f4d-b999-fc3ed0f57c33</div></div></TD></TR><TR><TD><a span-tag-html/>span</TD><TD>The HTML span element is a generic inline container for inline elements and content.</TD><TD>&lt;span class=&#8221;&#8221;>Some Text&lt;/span></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/b52a2a8d-ac9a-4ffa-8dfc-740cee344f4c</div></div></TD></TR><TR><TD><a html-strike-tag/>strike</TD><TD>HTML strike tag, along with understanding its implementation through the example. The &lt;strike> tag defines a strike or line through Text.</TD><TD>&lt;strike> Contents &lt;/strike></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/69287866-5f92-4f9f-b72e-86b6b1327859</div></div></TD></TR><TR><TD><a html-strong-tag/>strong</TD><TD>The strong tag in HTML is the parsed tag and is used to show the importance of the text. Make that text bold.</TD><TD>&lt;strong> Contents&#8230; &lt;/strong></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/9d3d2a46-6629-4101-9445-bb7a2e25f4aa</div></div></TD></TR><TR><TD><a html-style-tag/>style</TD><TD>The style tag in HTML helps us to design the web page.</TD><TD>&lt;tagname style=&#8221;property:value;&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/25f3c0cd-3134-48d1-9566-f5016c6c752c</div></div></TD></TR><TR><TD><a html-subscript-superscript-tags/>sub and sup Tags</TD><TD><ul><li>The sub-tag is used to add a subscript text to the HTML document.</li><li>The &lt;sup> tag is used to add superscript text to the HTML document.</li></ul></TD><TD>&lt;sub>subscript text&lt;/sub>&lt;sup>superscript text&lt;/sup></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/0ce61fab-6cf4-492a-b68f-bb208d3988d3</div></div></TD></TR><TR><TD><a html-5-summary-tag/>summary</TD><TD>The &lt;summary> tag in HTML is used to define a summary for the &lt;details> element.</TD><TD>&lt;summary> Content &lt;/summary></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/8faf02ea-d616-4be2-84f5-d83a5236c14b</div></div></TD></TR><TR><TD><a html-svg-basics/>svg</TD><TD>HTML SVG Basics, & their implementation through the examples. SVG stands for Scalable Vector Graphics.</TD><TD>&lt;svg height=&#8221;&#8221; width=&#8221;&#8221;></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/02108d7c-b358-478d-8283-15e14b3f9935</div></div></TD></TR><TR><TD><a html-tables/>table</TD><TD>HTML Table, various ways to implement it, & will also understand its usage through the examples. HTML Table is an arrangement of data in rows and columns, or possibly in a more complex structure.</TD><TD>&lt;table>&#8230; &lt;/table></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/d02cc077-0f6f-49a6-bf46-b148652e5bf5</div></div></TD></TR><TR><TD><a html-tbody-tag/>tbody</TD><TD>The tbody tag in HTML is used to make a group of the same type of content of the body element.</TD><TD>&lt;tbody> // Table contents &lt;/tbody></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/eb38b287-673c-43b9-b7b4-9580bf53d554</div></div></TD></TR><TR><TD><a html-td-tag/>td</TD><TD>The table data tag is used to define a standard cell in an HTML table.</TD><TD>&lt;td>&#8230;&#8230;..&lt;/td></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/ec62e4b4-98a6-4b67-a9f7-373da09f103e</div></div></TD></TR><TR><TD><a html-template-tag/>template</TD><TD>The template tag in HTML is used to store the HTML code fragments, which can be cloned and inserted in an HTML document.</TD><TD>&lt;template> Contents &lt;/template></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/1270335f-ced9-45c7-b890-d73d8aac9101</div></div></TD></TR><TR><TD><a html-tfoot-tag/>tfoot</TD><TD>This tag is used in HTML table with header and body which is known as thead and tbody.</TD><TD>&lt;tfoot> // Table footer contents&#8230; &lt;/tfoot></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/45810107-c722-4163-9266-23a98bb4279d</div></div></TD></TR><TR><TD><a html-th-tag/>th</TD><TD>The table header tag in HTML is used to set the header cell of a table. Two types of cells in the HTML table Header & Standard.</TD><TD>&lt;th> Contents&#8230; &lt;/th></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/55f2314c-df64-4164-95a7-ee5d295fb763</div></div></TD></TR><TR><TD><a html-thead-tag/>thead</TD><TD>This tag is used in HTML tables as head and body which are known as thead and tbody.</TD><TD>&lt;thead>Table head Contents&#8230;&lt;/thead></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/d8c49b3a-8c92-44a3-ba2f-23dad08a86ba</div></div></TD></TR><TR><TD><a html-time-tag/>time</TD><TD>The time tag is used to display the human-readable date/time. It can also be used to encode dates and times in a machine-readable form.</TD><TD>&lt;time attribute> Time&#8230; &lt;/time></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/d7dd20f2-232f-4b3e-86bf-70d55c36d401</div></div></TD></TR><TR><TD><a html-title-tag/>title</TD><TD>The title tag in HTML is used to define the title of HTML document. It sets the title in the browser toolbar.</TD><TD>&lt;title> Title name &lt;/title></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/78bd6104-c40d-4235-9d71-a5c9ae3364c1</div></div></TD></TR><TR><TD><a html-tr-tag/>tr</TD><TD>The table row tag is used to define a row in an HTML table. The &lt;tr> element contains multiple &lt;th> or &lt;td> elements.</TD><TD>&lt;tr>&#8230;..&lt;/tr></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/6b86eba5-dd3c-43fb-813b-2f91075845bc</div></div></TD></TR><TR><TD><a html-track-tag/>track</TD><TD>The tracking tag specifies text tracks for media components audio and video.</TD><TD>&lt;track attribute></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/f0604f54-8e19-4531-92c1-d78820f589ca</div></div></TD></TR><TR><TD><a html-tt-tag/>tt</TD><TD>The tt tag is the abbreviation of teletype text. This tag is depreciated from HTML 5. It was used for marking Keyboard input.</TD><TD>&lt;tt> Contents&#8230; &lt;/tt></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/114c14e3-1ddf-4292-8ad2-88b8b24d48de</div></div></TD></TR><TR><TD><a html-u-tag/>underline</TD><TD>The underline tag in HTML stands for underline, and its used to underline the text enclosed within the &lt;u> tag.</TD><TD>&lt;u> Contents&#8230; &lt;/u></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/f5ec3fbc-48b2-44dc-b12c-aee567691954</div></div></TD></TR><TR><TD><a html-var-tag/>var</TD><TD>It is a phrase tag used to specify the variable in a mathematical equation or in a computer program.</TD><TD>&lt;var> Contents&#8230; &lt;/var></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/8bf8223b-6e2e-4713-8fd6-70061d04cfea</div></div></TD></TR><TR><TD><a html5-video/>video</TD><TD>HTML5 Video, along with knowing the different ways to add the videos to the HTML page.</TD><TD>&lt;video src=&#8221;&#8221; controls> &lt;/video></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/469d139f-22c3-4c68-b6c4-e29e0e7587cb</div></div></TD></TR><TR><TD><a html-5-wbr-tag/>wbr</TD><TD>The wbr tag is used to define the position within the text which is treated as a line break by the browser.</TD><TD>&lt;wbr></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/07f80b12-5710-4943-8a1a-2fdd7ff367ab</div></div></TD></TR><TR><TD><a html-xmp-tag/>xmp</TD><TD>The XMP tag is used to create any content in letter format.</TD><TD>&lt;xmp> statement &lt;/xmp></TD><TD><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/tryit.php/4fcee4c0-cbed-4629-b213-bc6b6cf374d2</div></div></TD></TR></tbody></div></div></Table>
+
+
+ <div class="sticker">
+    <div class="book">
+	<div class="book__pg-shadow"></div>
+	<div class="book__pg"></div>
+	<div class="book__pg book__pg--2"></div>
+	<div class="book__pg book__pg--3"></div>
+	<div class="book__pg book__pg--4"></div>
+	<div class="book__pg book__pg--5"></div>
+</div>
+  </div>
+
+
+<HR width="100%" align="center" size=7 color="crimson"><BR>
+
+<marquee style="z-index:2;font-family:Comic Sans MS;font-size:20pt;color:crimson;height:40px;scrollamount:50">
+RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+</marquee>
+
+</body>
+
+</html>

@@ -1,0 +1,617 @@
+<html>
+<head>
+<title>Java Basics</title>
+<link rel="icon" href="Logo.png" type="image/png">
+<style>
+Table{background-repeat:no-repeat}
+A:link{color:red;display:inline-block;text-decoration:none}
+A:hover{color:Aqua;}
+pre{
+      padding-left:15px;
+}
+
+
+p{
+      padding-left:15px;
+}
+
+
+
+TD{
+      padding-left:45px;
+      padding-top:15px;
+}
+
+
+    }
+h1{
+      
+      font-family: 'Algerian';
+      font-size: 36px;
+      color: 'teal';
+      align: center;
+}
+h2{
+      
+      font-family: 'Times New Roman';
+      font-size: 36px;
+      text-align: center;
+}
+h3{
+      
+      font-family: 'Times New Roman';
+      font-size: 36px;
+      text-align: center;
+}
+ body {
+	display: grid;
+	place-items: center;
+      background-image: url('education7.jpeg');
+      background-repeat:repeat;
+      background-size: contain;
+      margin: 0;
+      padding: 0;
+    }
+    @keyframes zoom-1 {
+      0% {
+        transform: translate(5%, 30%) scale(0); opacity:0;
+      }
+      
+      50% {
+        transform: translate(5%, 30%) scale(1); opacity:1;
+      }
+      
+      100% {
+        transform: translate(5%, 30%) scale(1); opacity:1;
+      }
+    }
+
+
+    
+    @keyframes zooming {
+      0% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+      50% {
+        transform: translate(15%, 7%) scale(1.2); opacity:1;
+      }
+      
+      100% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+
+    }
+    .sticker-Java img {
+      height: 100%;
+    }
+
+
+    
+
+    .sticker-Java {
+      position: fixed;
+      bottom: 50px;
+      left: 15px;
+      height: 70px;
+      animation: zooming 4s infinite;
+    }
+
+
+
+    .sticker {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 100px;
+    }
+
+    .sticker img {
+      height: 100%;
+    }
+
+
+
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
+	--primary-l: hsl(var(--hue),90%,65%);
+	--primary-d: hsl(var(--hue),90%,45%);
+	--white: hsl(var(--hue),10%,100%);
+	--white-d: hsl(var(--hue),10%,45%);
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+.book,
+.book__pg-shadow,
+.book__pg {
+	animation: cover 7s ease-in-out infinite;
+}
+.book {
+	background-color: var(--primary-l);
+	border-radius: 0.25em;
+	box-shadow:
+		0 0.25em 0.5em hsla(0,0%,0%,0.3),
+		0 0 0 0.25em var(--primary) inset;
+	padding: 0.25em;
+	perspective: 37.5em;
+	position: relative;
+	width: 8em;
+	height: 6em;
+	transform: translate3d(0,0,0);
+	transform-style: preserve-3d;
+}
+.book__pg-shadow,
+.book__pg {
+	position: absolute;
+	left: 0.25em;
+	width: calc(50% - 0.25em);
+}
+.book__pg-shadow {
+	animation-name: shadow;
+	background-image: linear-gradient(-45deg,hsla(0,0%,0%,0) 50%,hsla(0,0%,0%,0.3) 50%);
+	filter: blur(0.25em);
+	top: calc(100% - 0.25em);
+	height: 3.75em;
+	transform: scaleY(0);
+	transform-origin: 100% 0%;
+}
+.book__pg {
+	animation-name: pg1;
+	background-color: var(--white);
+	background-image: linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	height: calc(100% - 0.5em);
+	transform-origin: 100% 50%;
+}
+.book__pg--2,
+.book__pg--3,
+.book__pg--4 {
+	background-image:
+		repeating-linear-gradient(hsl(var(--hue),10%,10%) 0 0.125em,hsla(var(--hue),10%,10%,0) 0.125em 0.5em),
+		linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 2.5em 4.125em, 100% 100%;
+}
+.book__pg--2 {
+	animation-name: pg2;
+}
+.book__pg--3 {
+	animation-name: pg3;
+}
+.book__pg--4 {
+	animation-name: pg4;
+}
+.book__pg--5 {
+	animation-name: pg5;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,30%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+}
+
+/* Animations */
+@keyframes cover {
+	from, 5%, 45%, 55%, 95%, to {
+		animation-timing-function: ease-out;
+		background-color: var(--primary-l);
+	}
+	10%, 40%, 60%, 90% {
+		animation-timing-function: ease-in;
+		background-color: var(--primary-d);
+	}
+}
+@keyframes shadow {
+	from, 10.01%, 20.01%, 30.01%, 40.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0.2) rotateY(90deg);
+	}
+	10%, 20%, 30%, 40%, 50%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	50.01%, 60.01%, 70.01%, 80.01%, 90.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	60%, 70%, 80%, 90%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+}
+@keyframes pg1 {
+	from, to {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.4deg);
+	}
+	10%, 15% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	20%, 80% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	85%, 90% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+}
+@keyframes pg2 {
+	from, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	5%, 10% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	20%, 25% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	30%, 70% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	75%, 80% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	90%, 95% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+}
+@keyframes pg3 {
+	from, 10%, 90%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	15%, 20% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	30%, 35% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	40%, 60% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	65%, 70% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	80%, 85% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+}
+@keyframes pg4 {
+	from, 20%, 80%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	25%, 30% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	40%, 45% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	50% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	55%, 60% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	70%, 75% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+}
+@keyframes pg5 {
+	from, 30%, 70%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+	35%, 40% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0deg);
+	}
+	50% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.6deg);
+	}
+	60%, 65% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+}
+
+
+
+    .Java-container1 {
+      display: flex;
+      width: 800px;
+      height: 430px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(135, 206, 235, 0.65);
+      box-sizing: border-box;
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: white;
+      text-decoration: none;
+    }
+
+
+
+
+
+
+    .Java-container {
+      display: flex;
+      width: 800px;
+      height: 740px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(135, 206, 235, 0.65);
+      box-sizing: border-box;
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: white;
+      text-decoration: none;
+    }
+
+
+    .Java {
+      display: inline-block;
+      width: 700px;
+      height: 220px;
+      background-color: rgba(255, 192 , 203, 0.55);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .Java-para {
+      display: inline-block;
+      width: 1200px;
+      height: 230px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+
+    .Java-para0 {
+      display: inline-block;
+      width: 1000px;
+      height: 100px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .Java-para1 {
+      display: inline-block;
+      width: 630px;
+      height: 90px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .Java-para2 {
+      display: inline-block;
+      width: 1200px;
+      height: 220px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 28px;
+      line-height: 45px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+
+</style>
+
+</head>
+
+
+
+<body bgcolor="white" Link="red" vlink="red" alink="fuchsia">
+<Table width="100%" height=5 bgcolor="black">
+<TR><TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="right"><Img src="phone.jpeg" align="bottom" width=25 height=25>&nbsp9935025968</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" color="white" size=2>
+<p align="right"><A href="https://www.facebook.com"><Img src="facebook.jpeg" align="bottom" width=25 height=25>&nbsp&nbsp&nbsp&nbsp</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" size=2>
+<p align="left"><A href="https://www.gmail.com"><Img src="gmail.jpeg" align="bottom" width=30 height=30>&nbsp</p>
+</TD>
+</font>
+</TR></Table>
+<HR>
+<Table width="100%" height=35 bgcolor="black">
+<TR>
+<TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="left"><Img src="top-logo.jpeg" align="bottom" width=100 height=90></p>
+</TD>
+<TD width="100%" height=5 valign="middle">
+<font face="Arial" color="white" size=2>
+<p align="center">
+<A href="index.html">Home</A>&nbsp I &nbsp
+<A href="Aboutme.html">About Us</A>&nbsp I &nbsp
+<A href="HTML.html">HTML</A>&nbsp I &nbsp
+<A href="HTMLtags.html">HTML-Tags</A>&nbsp I &nbsp
+<A href="Attributes.html">Attributes</A>&nbsp I &nbsp
+<A href="CSS.html">CSS</A>&nbsp I &nbsp
+<A href="CSSproperties.html">CSS-Properties</A>&nbsp I &nbsp
+Java&nbsp I &nbsp
+<A href="Python.html">Python</A>&nbsp I &nbsp
+<A href="Comment.html">Comments</A></font>
+</TD></TR></Table>
+
+<h1 align="center"><font color="Teal"><u>Java </u></font></h1>
+
+    <h2>What is Java?</h2>
+<div class="Java-para">
+    <p>Java is a most popular, object-oriented, widely used programming language and platform that is utilized for Android development, web development, artificial intelligence, cloud applications, and much more. So, mastering this gives you great opportunities in bigger organizations.</p>
+    </div>
+
+    <h2>Key Features of Java</h2>
+<div class="Java-container">
+    <ul>
+        <li><strong>Simple:</strong> Java was designed to be easy to learn and understand. It has a clean and straightforward syntax, making it accessible to beginners.</li>
+        <li><strong>Object-Oriented:</strong> Java is an object-oriented programming (OOP) language, which means it focuses on creating objects that encapsulate data and behavior.</li>
+        <li><strong>Platform Independent:</strong> Java programs can run on any platform that has a Java Virtual Machine (JVM). The JVM acts as an interpreter, executing Java bytecode regardless of the underlying operating system.</li>
+        <li><strong>Secure:</strong> Java has built-in security features that protect against common vulnerabilities, such as memory access violations and buffer overflows.</li>
+        <li><strong>Robust:</strong> The Java compiler performs extensive compile-time checks to catch errors and ensure code reliability.</li>
+        <li><strong>Large Standard Library:</strong> Java provides a vast collection of pre-built classes and APIs (Application Programming Interfaces) that make it easy to develop various types of applications.</li>
+    </ul>
+</div>
+    
+    <h2>Hello World Example</h2>
+<div class="Java-para0">
+    <p>Here's an example of a simple "Hello, World!" program written in Java:</p>
+</div>
+
+<h3>Example:</h3>
+<div class="Java">
+    <pre><code>Public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+        </code>
+    </pre>
+</div>
+    
+    <h2>Getting Started</h2>
+<div class="Java-para1">
+    <p>To start programming in Java, you'll need to:<br></p>
+</div>
+
+<div class="Java-container1">
+    <ol>
+        <li>Download and install the Java Development Kit (JDK) from the official Oracle website.</li>
+        <li>Set up your development environment by configuring the Java path and setting up an Integrated Development Environment (IDE) such as Eclipse, IntelliJ IDEA, or NetBeans.</li>
+        <li>Write your Java code in a text editor or IDE.</li>
+        <li>Compile your Java code using the Java compiler (javac) to produce bytecode.</li>
+        <li>Execute your Java program using the Java Virtual Machine (JVM) by running the bytecode (java command).</li>
+    </ol>
+</div>
+    
+    <h2>Conclusion</h2>
+<div class="Java-para2">
+    <p>Java is a versatile and powerful programming language that is widely used for developing a wide range of applications, including web and mobile applications, enterprise software, and more. Its simplicity, object-oriented nature, and platform independence make it a popular choice among developers.</p>
+</div>
+
+ <div class="sticker">
+    <div class="book">
+	<div class="book__pg-shadow"></div>
+	<div class="book__pg"></div>
+	<div class="book__pg book__pg--2"></div>
+	<div class="book__pg book__pg--3"></div>
+	<div class="book__pg book__pg--4"></div>
+	<div class="book__pg book__pg--5"></div>
+</div>
+  </div>
+
+<HR width="100%" align="center" size=7 color="blue"><BR>
+
+<marquee style="z-index:2;font-family:Comic Sans MS;font-size:20pt;color:blue;height:40px;scrollamount:50">
+RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+</marquee>
+
+</body>
+
+</html>
+

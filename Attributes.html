@@ -1,0 +1,442 @@
+<html>
+<head>
+<title>HTML Attributes Explanation</title>
+<link rel="icon" href="Logo.png" type="image/png">
+<style>
+Table{background-repeat:no-repeat}
+A:link{color:red;display:inline-block;text-decoration:none}
+A:hover{color:Aqua;}
+TD{
+      padding-left:45px;
+      padding-top:15px;
+}
+TR{
+      padding-left:45px;
+      padding-top:15px;
+}
+ 
+p{padding-left:15px} 
+
+h2{
+      font-family: 'Arial';
+      font-size: 20px;
+} 
+
+ body {
+      background-image: url('education8.jpeg');
+      background-repeat:repeat;
+      background-size: contain;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    
+    @keyframes zooming {
+      0% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+      50% {
+        transform: translate(15%, 7%) scale(1.2); opacity:1;
+      }
+      
+      100% {
+        transform: translate(15%, 7%) scale(1); opacity:1;
+      }
+
+    }
+    .sticker-HTML img {
+      height: 100%;
+    }
+
+
+    
+
+    .sticker-HTML {
+      position: fixed;
+      bottom: 50px;
+      left: 15px;
+      height: 70px;
+      animation: zooming 4s infinite;
+    }
+
+
+    .HTML-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.20);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 14px;
+      line-height: 15px;
+      color: white;
+      text-decoration: none;
+    }
+    .HTML {
+      display: inline-block;
+      width: 1200px;
+      height: 200px;
+      background-color: rgba(255, 218, 185, 0.65);
+      border-radius: 10px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .sticker {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      height: 100px;
+    }
+
+    .sticker img {
+      height: 100%;
+    }
+
+
+
+:root {
+	--hue: 100;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,55%);
+	--primary-l: hsl(var(--hue),90%,65%);
+	--primary-d: hsl(var(--hue),90%,45%);
+	--white: hsl(var(--hue),10%,100%);
+	--white-d: hsl(var(--hue),10%,45%);
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+body {
+	display: grid;
+	place-items: center;
+}
+.book,
+.book__pg-shadow,
+.book__pg {
+	animation: cover 7s ease-in-out infinite;
+}
+.book {
+	background-color: var(--primary-l);
+	border-radius: 0.25em;
+	box-shadow:
+		0 0.25em 0.5em hsla(0,0%,0%,0.3),
+		0 0 0 0.25em var(--primary) inset;
+	padding: 0.25em;
+	perspective: 37.5em;
+	position: relative;
+	width: 8em;
+	height: 6em;
+	transform: translate3d(0,0,0);
+	transform-style: preserve-3d;
+}
+.book__pg-shadow,
+.book__pg {
+	position: absolute;
+	left: 0.25em;
+	width: calc(50% - 0.25em);
+}
+.book__pg-shadow {
+	animation-name: shadow;
+	background-image: linear-gradient(-45deg,hsla(0,0%,0%,0) 50%,hsla(0,0%,0%,0.3) 50%);
+	filter: blur(0.25em);
+	top: calc(100% - 0.25em);
+	height: 3.75em;
+	transform: scaleY(0);
+	transform-origin: 100% 0%;
+}
+.book__pg {
+	animation-name: pg1;
+	background-color: var(--white);
+	background-image: linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	height: calc(100% - 0.5em);
+	transform-origin: 100% 50%;
+}
+.book__pg--2,
+.book__pg--3,
+.book__pg--4 {
+	background-image:
+		repeating-linear-gradient(hsl(var(--hue),10%,10%) 0 0.125em,hsla(var(--hue),10%,10%,0) 0.125em 0.5em),
+		linear-gradient(90deg,hsla(var(--hue),10%,90%,0) 87.5%,hsl(var(--hue),10%,90%));
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 2.5em 4.125em, 100% 100%;
+}
+.book__pg--2 {
+	animation-name: pg2;
+}
+.book__pg--3 {
+	animation-name: pg3;
+}
+.book__pg--4 {
+	animation-name: pg4;
+}
+.book__pg--5 {
+	animation-name: pg5;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,30%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+}
+
+/* Animations */
+@keyframes cover {
+	from, 5%, 45%, 55%, 95%, to {
+		animation-timing-function: ease-out;
+		background-color: var(--primary-l);
+	}
+	10%, 40%, 60%, 90% {
+		animation-timing-function: ease-in;
+		background-color: var(--primary-d);
+	}
+}
+@keyframes shadow {
+	from, 10.01%, 20.01%, 30.01%, 40.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0.2) rotateY(90deg);
+	}
+	10%, 20%, 30%, 40%, 50%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	50.01%, 60.01%, 70.01%, 80.01%, 90.01% {
+		animation-timing-function: ease-in;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(180deg);
+	}
+	60%, 70%, 80%, 90%, to {
+		animation-timing-function: ease-out;
+		transform: translate3d(0,0,1px) scaleY(0) rotateY(0);
+	}
+}
+@keyframes pg1 {
+	from, to {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.4deg);
+	}
+	10%, 15% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	20%, 80% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+	85%, 90% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(180deg);
+	}
+}
+@keyframes pg2 {
+	from, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	5%, 10% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+	20%, 25% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	30%, 70% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	75%, 80% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.9deg);
+	}
+	90%, 95% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.3deg);
+	}
+}
+@keyframes pg3 {
+	from, 10%, 90%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	15%, 20% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+	30%, 35% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	40%, 60% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	65%, 70% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.8deg);
+	}
+	80%, 85% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.2deg);
+	}
+}
+@keyframes pg4 {
+	from, 20%, 80%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	25%, 30% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+	40%, 45% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	50% {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	55%, 60% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.7deg);
+	}
+	70%, 75% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0.1deg);
+	}
+}
+@keyframes pg5 {
+	from, 30%, 70%, to {
+		animation-timing-function: ease-in;
+		background-color: var(--white-d);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+	35%, 40% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0deg);
+	}
+	50% {
+		animation-timing-function: ease-in-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(179.6deg);
+	}
+	60%, 65% {
+		animation-timing-function: ease-out;
+		background-color: var(--white);
+		transform: translate3d(0,0,1px) rotateY(0);
+	}
+}
+
+</style>
+</head>
+
+<body bgcolor="white" Link="red" vlink="red" alink="fuchsia">
+<Table width="100%" height=5 bgcolor="black">
+<TR><TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="right"><Img src="phone.jpeg" align="bottom" width=25 height=25>&nbsp9935025968</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" color="white" size=2>
+<p align="right"><A href="https://www.facebook.com"><Img src="facebook.jpeg" align="bottom" width=25 height=25>&nbsp&nbsp&nbsp&nbsp</p>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" size=2>
+<p align="left"><A href="https://www.gmail.com"><Img src="gmail.jpeg" align="bottom" width=30 height=30>&nbsp</p>
+</TD>
+</font>
+</TR></Table>
+<HR>
+<Table width="100%" height=35 bgcolor="black">
+<TR>
+<TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="left"><Img src="top-logo.jpeg" align="bottom" width=100 height=90></p>
+</TD>
+<TD width="100%" height=5 valign="middle">
+<font face="Arial" color="white" size=2>
+<p align="center">
+<A href="index.html">Home</A>&nbsp I &nbsp
+<A href="Aboutme.html">About Us</A>&nbsp I &nbsp
+<A href="HTML.html">HTML&nbsp I &nbsp
+<A href="HTMLtags.html">HTML-Tags</A>&nbsp I &nbsp
+Attributes&nbsp I &nbsp
+<A href="CSS.html">CSS</A>&nbsp I &nbsp
+<A href="CSSproperties.html">CSS-Properties</A>&nbsp I &nbsp
+<A href="Java.html">Java</A>&nbsp I &nbsp
+<A href="Python.html">Python</A>&nbsp I &nbsp
+<A href="Comment.html">Comments</A></font>
+</TD></TR></Table>
+
+<h1 align="center"><font color="Teal"><u>HTML Attributes</u></font></h1>
+
+
+<div class="HTML">
+<p><strong>HTML attributes:</strong> HTML attributes are the special words placed inside the opening tags and used to define the characteristics of an HTML element. The HTML attributes contain two parts, attribute name, and its value. The attribute pairs (attribute_name, attribute_value) are separated using equal (=) operator. The attribute value is closed inside double quotes (&#8221; &#8220;).&nbsp;</p>
+</div>
+
+<p>The complete list of HTML attributes are given below:</p>
+
+<Table width="100%"><thead><TR><TH width="20%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attributes</TH><TH width="80%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description</TH></TR></thead></Table>
+
+<Table class="HTML-container"><tbody><tr><td><a html-accept-attribute/>accept</a></td><td>This attribute can be used with &lt;input> element only.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/08ce3f80-09f9-4c4b-b196-92a3e25c10b6></a></div></div></td></tr><tr><td><a html-accept-charset-attribute/>accept-charset</a></td><td>Define character encoding and is used for form submission.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/16dc5ad0-819b-4136-a991-cf22e0f8c082></a></div></div></td></tr><tr><td><a html-accesskey-attribute/>accesskey</a></td><td>The keyboard shortcuts to activate/focus specific elements.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/87479f5d-ba09-448a-aba7-1fe1a68afe71></a></div></div></td></tr><tr><td><a html-action-attribute/>action</a></td><td>Specify where the form data is to be sent to the server after submission of the form.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8f92e9fd-59b8-4233-bf58-1f02be4993d5></a></div></div></td></tr><tr><td><a html-align-attribute/>align</a></td><td>Specify the alignment of text content of The Element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/057c72fd-7ee7-4fe0-8ef1-634daae74635></a></div></div></td></tr><tr><td><a html-alt-attribute/>alt</a></td><td>Show or display something if the primary attribute</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/68e9d87a-9a74-49f0-8c1e-e59a6c47ce65></a></div></div></td></tr><tr><td><a html-async-attribute/>async</a></td><td>Only works for external scripts (and used only in when src attribute is present ).</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/552b70e5-3871-4a07-b819-c2e1162bdb5a></a></div></div></td></tr><tr><td><a html-autocomplete-attribute/>autocomplete</a></td><td>Specify whether the input field has autocompleted would be on or off.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7db10ddd-80b3-40c5-949b-b641d906451a></a></div></div></td></tr><tr><td><a html-autoplay-attribute/>autoplay</a></td><td>The audio/video should automatically start playing when web page is loaded.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ee5b982d-1ffd-4b88-a5ef-5a0077b4b77f></a></div></div></td></tr><tr><td><a html-autofocus-attribute/>autofocus</a></td><td>The element should get focused when the page loads. It is a boolean attribute.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/49e19cec-9ec3-460a-8c0b-8260e436e4a6></a></div></div></td></tr><tr><td><a html-bgcolor-attribute/>bgcolor</a></td><td>Set the background color of an HTML element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/066c96a1-21b6-4e8e-8957-2dbd8740749b></a></div></div></td></tr><tr><td><a html-border-attribute/>border</a></td><td>Set visible border width to most HTML elements within the body.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/27dbf172-9876-4cc8-a59c-e9b06d3ce309></a></div></div></td></tr><tr><td><a html-charset-attribute/>charset</a></td><td>Define character encoding.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/dd32b504-4be4-4946-9bb2-13961a40bd17></a></div></div></td></tr><tr><td><a html-checked-attribute/>checked</a></td><td>Indicate whether an element should be checked when the page loads up. It is a Boolean attribute.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/db03d83a-4bd9-4005-badd-bf67aa926363></a></div></div></td></tr><tr><td><a html-cite-attribute/>cite</a></td><td>Specify the URL of the document that explains the quotes, message or text which describes why the text was inserted.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/fdf67d09-d029-4719-9c29-5807fad71586></a></div></div></td></tr><tr><td><a html-class-attribute/>Class</a></td><td>Specifies one or more class names for an HTML element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/58a1c431-c3d0-4ca3-a367-08e42ca88bdc></a></div></div></td></tr><tr><td><a html-cols-attribute/>cols</a></td><td>The number of columns a cell should span.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/e9b26392-9d48-48d2-a9f3-05c9330958fb></a></div></div></td></tr><tr><td><a html-colspan-attribute/>colspan</a></td><td>HTML specifies the number of columns a cell should span.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0aa77b10-a7fa-455e-9b43-341872afae49></a></div></div></td></tr><tr><td><a html-content-attribute/>content</a></td><td>The values that are related to the http-equiv or name attribute.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ae6adc7d-61c1-4798-8b64-c2672f3dbeb4></a></div></div></td></tr><tr><td><a html-contenteditable-attribute/>contenteditable</a></td><td>Specify whether the content present in the element is editable or not.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/635fd53f-c42a-4b07-9336-5309c214519a></a></div></div></td></tr><tr><td><a html-controls-attribute/>controls</a></td><td>It is a Boolean attribute and also new in HTML5</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/097f5a16-4852-4b4e-a06a-5e6ce80e09fd></a></div></div></td></tr><tr><td><a html-coords-attribute/>coords</a></td><td>Specify the coordinate of an area in an image-map</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/51f3c7a7-c13a-4033-b87e-5b10155eca08></a></div></div></td></tr><tr><td><a html-data-attribute/>data</a></td><td>Specify the URL of the Embedded file of the Object.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/5d6edd17-2e4b-441f-8dd2-e0853896719e></a></div></div></td></tr><tr><td><a html-data-attributes/>data-*</a></td><td>Specific to HTML5 and you can use the data-* attribute on all HTML elements.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/73bc0b48-e90a-4d40-8b71-7050d8d5321a></a></div></div></td></tr><tr><td><a html-datetime-attribute/>datetime</a></td><td>Specify the date and time of the inserted and the deleted text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/62d1c252-14ce-4a71-9dd5-7af7d242353a></a></div></div></td></tr><tr><td><a html-default-attribute/>default</a></td><td>&nbsp;Specify that the track will be enabled if the user�s preferences do not indicate that another track would be more appropriate.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/62d1c252-14ce-4a71-9dd5-7af7d242353a></a></div></div></td></tr><tr><td><a html-defer-attribute/>defer</a></td><td>Executed when the page has finished parsing.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7e9763df-8875-4bdd-9e6e-17c281b8b2ef></a></div></div></td></tr><tr><td><a html-dir-attribute/>dir</a></td><td>The text direction of the element content.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/59101715-ac06-4a4e-bea6-4642379e9074></a></div></div></td></tr><tr><td><a html-dirname-attribute/>dirname</a></td><td>Enable the text direction of the input and the Textarea Field after submitting the form.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/ca9c9b4b-e279-46e1-b002-69a563e56027></a></div></div></td></tr><tr><td><a html-disabled-attribute/>disabled</a></td><td>The disabled attribute in HTML indicates whether the element is disabled or not.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6c1d5af8-e14d-4dee-8c3a-2565fe5e943c></a></div></div></td></tr><tr><td><a html-download-attribute/>download</a></td><td>Download the element when the user clicks on the hyperlink</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b5d4764a-f934-4a32-b349-ee848495cb7b></a></div></div></td></tr><tr><td><a html-draggable-attribute/>draggable</a></td><td>Specify whether an element is draggable or not.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/192e24aa-5518-49f1-874d-04977cd7eaad></a></div></div></td></tr><tr><td><a html-dropzone-attribute/>dropzone</a></td><td>Specify whether the dragged data is copied, moved, or linked when it is dropped on any element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6d4d8f8f-12d6-4aea-afa8-5765ebf93f72></a></div></div></td></tr><tr><td><a html-enctype-attribute/>enctype</a></td><td>That data will be present in the form and should be encoded when submitted to the server.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7b2b7264-3b22-4d87-af08-eca28e660f2d></a></div></div></td></tr><tr><td><a html-for-attribute/>for</a></td><td>For Attribute is used in both the &lt;label> and the &lt;output> element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9a84c9e2-b2e4-4857-b196-17349e7c3825></a></div></div></td></tr><tr><td><a html-form-attribute/>form</a></td><td>That the element can contain one or more forms</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/339b95ca-8e6b-4a27-91a8-465d2ab1c5da></a></div></div></td></tr><tr><td><a html-formaction-attribute/>formaction</a></td><td>Specify where to send the data of the form. After submission of the form, the formaction attribute is called.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7d365d68-a914-4da6-91f0-56d0007b96d4></a></div></div></td></tr><tr><td><a html-headers-attribute/>headers</a></td><td>The HTML headers attribute specifies one or additional header cells a table cell is expounded to.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/bbac4254-41c3-44ae-94e4-97f74569b271></a></div></div></td></tr><tr><td><a html-height-attribute/>height</a></td><td>height attribute is used to specify the height of the Element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/79ee5335-1204-4d49-841d-2b040ad1bd15></a></div></div></td></tr><tr><td><a html-hidden-attribute/>hidden</a></td><td>The hidden attribute in HTML is used to define the visibility of elements.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a5e46538-7c3e-4653-b20b-1cb0c25f0768></a></div></div></td></tr><tr><td><a html-high-attribute/>high</a></td><td>The range where the value of gauge is considered to be of high value.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/75445d22-633c-46d6-9fd6-875a68fd452f></a></div></div></td></tr><tr><td><a html-href-attribute/>href</a></td><td>It is used to specify the URL of the document.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/01b54b33-cf58-422e-9f21-a3fe1818864b></a></div></div></td></tr><tr><td><a html-hreflang-attribute/>hreflang</a></td><td>The language for a linked document. It is used only when the href attribute is set.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7a4535f8-f2bb-451e-9579-ac32d204e7df></a></div></div></td></tr><tr><td><a html-http-equiv-attribute/>http-equiv</a></td><td>Provide header information or value of the content Attribute.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9f570712-87af-4860-b4dc-76ee6cc73d87></a></div></div></td></tr><tr><td><a html-id-attributes/>Id</a></td><td>It is used by CSS and JavaScript to perform a certain task for a unique element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/16b4ead1-0a81-40ff-8ba8-74182133a106></a></div></div></td></tr><tr><td><a html-ismap-attribute/>ismap</a></td><td>The HTML ismap attribute is a boolean attribute.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9251b1dc-0599-470c-8b98-c3c2adc1d590></a></div></div></td></tr><tr><td><a html-kind-attribute/>kind</a></td><td>The kind of track. This attribute is only used in &lt;Track> element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/65fc5625-9ae4-4218-9f55-1cdf8a863016></a></div></div></td></tr><tr><td><a html-label-attribute/>label</a></td><td>The title of the Text Track is used by the browser when listing available text tracks.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0b3b0804-77cc-49a6-8122-80fc0ee6c5ee></a></div></div></td></tr><tr><td><a html-lang-attribute/>lang</a></td><td>Specify the language of the element content.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/77ca73f8-b1d5-4e2f-805c-109e85c9ea59></a></div></div></td></tr><tr><td><a html-list-attribute/>list</a></td><td>List of pre-defined options for an &lt;input> element to suggest the user.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/0b745c0b-86cd-4ca2-9fb1-fa1c6c5b88a3></a></div></div></td></tr><tr><td><a html-loop-attribute/>loop</a></td><td>Restart the audio and video again and again after finishing it. It contains the Boolean value.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/abd9896e-b507-47a4-9886-771ea3e4eec9></a></div></div></td></tr><tr><td><a html-low-attribute/>low</a></td><td>The range where the value of gauge is considered to be low.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/458fd39b-245d-4287-b23e-0a0795ab8a1b></a></div></div></td></tr><tr><td><a html-max-attribute/>max</a></td><td>Specifies the maximum value of an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f0c3d9ca-606d-43ba-aa9b-e55a26126234></a></div></div></td></tr><tr><td><a html-maxlength-attribute/>maxlength</a></td><td>The maximum number of characters in the &lt;input> element. Its default value is 524288.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a661ee0c-2942-42c8-9d66-55fac37ff134></a></div></div></td></tr><tr><td><a html-media-attribute/>media</a></td><td>Specify the media or device the coupled document is optimized for.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/3bd4cd3a-b76a-43f9-a336-2e958115beac></a></div></div></td></tr><tr><td><a html-method-attribute/>method</a></td><td>The HTTP method is used to send data while submitting the form.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/808bd986-f59f-4427-9a83-05cfea9652d6></a></div></div></td></tr><tr><td><a html-min-attribute/>min</a></td><td>Specify the lower bound of the gauge.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/21afbe73-f01b-4113-af01-53b3d23cc348></a></div></div></td></tr><tr><td><a html-multiple-attribute/>multiple</a></td><td>Allowed to select more than one value that is present in an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/8bb51248-77ca-433c-95bf-ef8a13581f97></a></div></div></td></tr><tr><td><a html-muted-attribute/>muted</a></td><td>The audio output of the video is muted, it is a Boolean attribute.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f740497c-1076-4e2f-a930-e6ecfb29cb1a></a></div></div></td></tr><tr><td><a html-name-attribute/>name</a></td><td>Specify a name for the element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/28357789-d824-4f62-8dbb-c08d51455d42></a></div></div></td></tr><tr><td><a html-novalidate-attribute/>novalidate</a></td><td>That the form-data should not be validated when submitting the form.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/56a1a2fb-cc22-442e-b3d9-358935523b1d></a></div></div></td></tr><tr><td><a html-onblur-attribute/>onblur</a></td><td>That moment when the element loses focus.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/25fc812d-371a-4b48-9411-95a0b0142f67></a></div></div></td></tr><tr><td><a html-oncopy-attribute/>oncopy</a></td><td>The user copied the content present in an element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/6df182ce-a149-4c1c-ac94-81f043fc6d2a></a></div></div></td></tr><tr><td><a html-oncut-attribute/>oncut</a></td><td>The user cut or delete the content that has been present in the element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/b81ebd3f-d68c-4006-b77f-6ce4cc48e352></a></div></div></td></tr><tr><td><a html-onkeypress-attribute/>onkeypress</a></td><td>when a user presses a key on the Keyboard.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/9a3d025d-ebf7-468c-aee9-31037596c83f></a></div></div></td></tr><tr><td><a html-onmousedown-attribute/>onmousedown</a></td><td>Order of events occurs related to the onmousedown event.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/887d2f61-6514-4646-aaf5-5d3d735bc1b1></a></div></div></td></tr><tr><td><a html-onscroll-attribute/>onscroll</a></td><td>This onscroll attribute works when an element scrollbar is being scrolled.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/e5d0da2f-b0dc-49e3-894a-c2defe581e75></a></div></div></td></tr><tr><td><a html-optimum-attribute/>optimum</a></td><td>The optimum attribute in HTML indicates the optimal numeric value for the gauge.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/00eb1631-f848-41fb-9de2-94d29bd2c000></a></div></div></td></tr><tr><td><a html-pattern-attribute/>pattern</a></td><td>Specifies a short hint that describes the expected value of an input field/text area.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a2279b31-1353-4d07-8657-a19cc1020219></a></div></div></td></tr><tr><td><a html-placeholder-attribute/>placeholder</a></td><td>Specifies a short hint that describes the expected value of an input field/text area.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/66232971-ef1e-460d-b3fe-14643fb93fc4></a></div></div></td></tr><tr><td><a html-readonly-attribute/>readonly</a></td><td>Specify that the text written in input or text area Element is read-only.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/dfbb9a5f-b6e8-4507-b299-e70fcac80160></a></div></div></td></tr><tr><td><a html-required-attribute/>required</a></td><td>Specify that the input element must be filled out before submitting the Form.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/513f47b4-c4d9-43df-b3b8-7877dc18e009></a></div></div></td></tr><tr><td><a html-reversed-attribute/>reversed</a></td><td>Ordered the list in Descending Order(9, 8, 7, 6 �..) instead of ascending order(1, 2, 3 �.)</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/e8237e33-ce71-44a1-821a-f14ca48123ec></a></div></div></td></tr><tr><td><a html-rows-attribute/>rows</a></td><td>The number of visible text lines for the control i.e the number of rows to display.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/61c36ca4-59e6-4eb0-8cb2-b7ec5f661fd4></a></div></div></td></tr><tr><td><a html-rowspan-attribute/>rowspan</a></td><td>The number of rows a cell should span.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/cd77973a-2ce6-4a60-9fee-56ccae9cb633></a></div></div></td></tr><tr><td><a html-selected-attribute/>selected</a></td><td>Specify which option should be by default selected when the page loads.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/12d9fda7-5a7c-433c-9081-25342d1c63be></a></div></div></td></tr><tr><td><a html-size-attribute/>size</a></td><td>Specify the initial width for the input field and a number of visible rows for the select element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/618193ef-8b46-485c-bf45-6e2783434a91></a></div></div></td></tr><tr><td><a html-spell-check/>spellcheck</a></td><td>Applied to HTML forms using the spellcheck attribute.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/7b8f39a5-a02e-4648-893d-4303d2e10ae1></a></div></div></td></tr><tr><td><a html-srclang-attribute/>srclang</a></td><td>Specify the language of the track text.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/f2b8da37-72a9-44d3-a1a4-49783093b3ec></a></div></div></td></tr><tr><td><a html-start-attribute/>start</a></td><td>The start value for numbering the individual list item.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/2a7a7844-de91-41a9-9ca1-f0dbef06049c></a></div></div></td></tr><tr><td><a html-step-attribute/>step</a></td><td>Set the discrete step size of the &lt;input> element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/26193e91-38f3-4f06-824c-86c41881a9fb></a></div></div></td></tr><tr><td><a html-style-attribute/>style</a></td><td>There are 3 ways of implementing style in HTML.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/feab34cd-6f80-4ed2-b7de-f6d4b6d00364></a></div></div></td></tr><tr><td><a html-tabindex-attribute/>tabindex</a></td><td>When the tab button is used for navigating.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/99e6c765-af68-4745-9bed-1bc82eca1f68></a></div></div></td></tr><tr><td><a html-target-attribute/>target</a></td><td>Specify where to open the linked document.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/69ad184d-c084-4d1c-80ee-47d7fe8645c1></a></div></div></td></tr><tr><td><a html-title-attribute/>title</a></td><td>Specify extra information about the element.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/08e5c993-aa14-447e-93a2-d0b6b7c00fd2></a></div></div></td></tr><tr><td><a html5-translate-attribute/>translate</a></td><td>Specify whether the content of an element is translated or not.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/62ab2881-866d-4758-b2e5-0768bd467fb9></a></div></div></td></tr><tr><td><a html-value-attribute/>value</a></td><td>Specify the value of the element with which it is used.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/a2050349-39c6-4788-afbc-ed2684994263></a></div></div></td></tr><tr><td><a html-wrap-attribute/>wrap</a></td><td>Specify in which manner the text is to be wrapped in a text area when a form is submitted.</td><td><div class=practiceLinkDiv-banner><div class=redirect><a href=https://ide.geeksforgeeks.org/it.php/fb695413-3b28-4d7c-94cb-dd7e36cd8633></a></div></div></td></tr></tbody></Table>
+
+ <div class="sticker">
+    <div class="book">
+	<div class="book__pg-shadow"></div>
+	<div class="book__pg"></div>
+	<div class="book__pg book__pg--2"></div>
+	<div class="book__pg book__pg--3"></div>
+	<div class="book__pg book__pg--4"></div>
+	<div class="book__pg book__pg--5"></div>
+</div>
+  </div>
+
+<HR width="100%" align="center" size=7 color="forestgreen"><BR>
+
+<marquee style="z-index:2;font-family:Comic Sans MS;font-size:20pt;color:forestgreen;height:40px;scrollamount:50">
+RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+</marquee>
+
+</body>
+
+</html>

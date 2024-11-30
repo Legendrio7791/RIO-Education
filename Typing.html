@@ -1,0 +1,347 @@
+
+<html>
+<head>
+    <title>Typing Tester</title>
+<link rel="icon" href="Logo.png" type="image/png">
+  <style>
+Table{background-repeat:no-repeat}
+A:link{color:red;display:inline-block;text-decoration:none}
+A:hover{color:Aqua;}
+TD{padding-left:45px} 
+
+pre{
+      padding-left:15px;
+}
+
+
+
+p{
+      padding-left:15px;
+}
+
+
+
+TD{
+      padding-left:45px;
+      padding-top:15px;
+}
+
+
+
+
+
+TR{
+      padding-left:45px;
+      padding-top:15px;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+    }
+h1{
+      font-size: 36px;
+      color: 'teal';
+      text-align: center;
+}
+h2{
+      font-size: 36px;
+      text-align: center;
+}
+h3{
+      
+      font-family: 'Times New Roman';
+      font-size: 36px;
+      text-align: center;
+}
+ body {
+	display: grid;
+	place-items: center;
+      background-repeat:repeat;
+      background-size: contain;
+      margin: 0;
+      padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        #quote {
+            margin: 50px auto;
+            width: 500px;
+            font-size: 20px;
+           background-color: rgba(255, 255, 255, 1);
+        }
+        #input {
+            margin-top: 20px;
+            height: 50px;
+            width: 420px;
+            font-size: 26px;
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 15px;
+      border-width: 10px;
+      border-style: ridge;
+      border-color: rgba(0, 240, 255, 1);
+      font-family: 'Times New Roman';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+        }
+        #result {
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        #reset {
+            margin-top: 20px;
+        }
+
+.green-border {
+  border-left: 4px solid #04AA6D;
+}
+
+
+
+button {
+      display: flex;
+      width:150px;
+      height: 35px;
+      margin: 0 auto;
+      padding: 5px;
+      background-color: rgba(34, 139, 34, 1);
+      box-sizing: border-box;
+      border-radius: 50px;
+      font-family: 'Comic Sans MS';
+      font-size: 14px;
+      line-height: 20px;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+    }
+
+
+
+    .Java-1 {
+      display: inline-block;
+      width: 550px;
+      height: 250px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 5px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+
+
+
+
+
+
+
+
+
+    .Java {
+      display: inline-block;
+      width: 100%;
+      height: 800px;
+      border-radius: 5px;
+      font-family: 'Comic Sans MS';
+      font-size: 24px;
+      line-height: 35px;
+      color: #000;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+
+
+
+    .sticker-1 {
+      position: relative;
+      bottom: 300px;
+      right: -15px;
+      height: 100px;
+    }
+
+    .sticker-1 img {
+      height: 100%;
+    }
+    </style>
+    <script>
+        var currentQuoteIndex;
+        var startTime;
+        var timerInterval;
+        
+        function getRandomQuote() {
+            currentQuoteIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[currentQuoteIndex];
+        }
+        
+        function displayQuote() {
+            var quote = getRandomQuote();
+            document.getElementById("quote").textContent = quote;
+        }
+        
+        function resetTest() {
+            clearInterval(timerInterval);
+            document.getElementById("input").value = "";
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("timer").textContent = "0.00";
+            displayQuote();
+        }
+        
+        function startTest() {
+            document.getElementById("result").innerHTML = "";
+            startTime = new Date().getTime();
+            timerInterval = setInterval(updateTimer, 10);
+        }
+        
+        function updateTimer() {
+            var currentTime = new Date().getTime();
+            var elapsedTime = (currentTime - startTime) / 1000;
+            document.getElementById("timer").textContent = elapsedTime.toFixed(2);
+        }
+        
+        function stopTest() {
+            clearInterval(timerInterval);
+            var quote = document.getElementById("quote").textContent.trim();
+            var input = document.getElementById("input").value.trim();
+            var words = quote.split(" ");
+            var inputWords = input.split(" ");
+            var errors = 0;
+            var accuracy = 0;
+            
+            if (quote === input) {
+                errors = 0;
+                accuracy = 100;
+            } else {
+                for (var i = 0; i < words.length; i++) {
+                    if (words[i] !== inputWords[i]) {
+                        errors++;
+                    }
+                }
+                accuracy = ((words.length - errors) / words.length) * 100;
+            }
+            
+            var speed = (words.length / ((new Date().getTime() - startTime) / 60000)).toFixed(2);
+            
+            var result = "Speed: " + speed + " words per minute<br>";
+            result += "Accuracy: " + accuracy.toFixed(2) + "%<br>";
+            result += "Errors: " + errors;
+            
+            document.getElementById("result").innerHTML = result;
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            displayQuote();
+        });
+            var quotes = [
+                "The use of linear programming as an aid to decision making when allocating scarce investment funds has been widely advocated.",
+                "Programming is not about what you know; it is about what you can figure out.",
+                "Arrogance is followed by destruction, and unbridled conceitedness by depravity; it is not necessary to defeat others to make our own sucess.",
+                "Success is not the key to happiness. Happiness is the key to success.",
+                "We don't always get our hopes and dreams, and we don't always get our own way.But don't give up hope, because you can make a difference one situation and one person at a time."
+            ];
+        
+    </script>
+</head>
+<body onload="resetTest()" bgcolor="white" Link="red" vlink="red" alink="fuchsia">
+<Table width="100%" height=5 bgcolor="black">
+<TR><TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="right"><Img src="phone.jpeg" align="bottom" width=25 height=25>&nbsp9935025968</p></div>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" color="white" size=2>
+<p align="right"><A href="https://www.facebook.com"><Img src="facebook.jpeg" align="bottom" width=25 height=25>&nbsp&nbsp&nbsp&nbsp</p></div>
+</TD>
+<TD width="60%" height=5 valign="baseline">
+<font face="Arial" size=2>
+<p align="left"><A href="https://www.gmail.com"><Img src="gmail.jpeg" align="bottom" width=30 height=30>&nbsp</p></div>
+</TD>
+</font>
+</TR></Table>
+<HR>
+<Table width="100%" height=35 bgcolor="black">
+<TR>
+<TD width="20%" height=5 valign="baseline">
+<font face="Arial" color="white" size=3>
+<p align="left"><Img src="top-logo.jpeg" align="bottom" width=100 height=90></p></div>
+</TD>
+<TD width="100%" height=5 valign="middle">
+<font face="Arial" color="white" size=2>
+<p align="center">
+<A href="index.html">Home</A>&nbsp I &nbsp
+<A href="Aboutme.html">About Us</A>&nbsp I &nbsp
+<A href="HTML.html">HTML&nbsp I &nbsp
+<A href="HTMLtags.html">HTML-Tags</A>&nbsp I &nbsp
+<A href="Attributes.html">Attributes</A>&nbsp I &nbsp
+<A href="CSS.html">CSS</A>&nbsp I &nbsp
+<A href="CSSproperties.html">CSS-Properties</A>&nbsp I &nbsp
+<A href="Java.html">Java</A>&nbsp I &nbsp
+<A href="Python.html">Python</A>&nbsp I &nbsp
+<A href="Comment.html">Comments</A></font>
+</font>
+</TD></TR></Table>
+
+
+
+<Table style="background-color:black;width:100%;height:200px;" align="center"><TR><TD align="center">
+ 
+    <h1 style="text-align:center;color:white;font-size:60px;">Typing Test</h1>
+   <div class="Java-1"><div id="quote" style="height:100px;background-color:white;"></div></div>
+
+
+</TD>
+</TR>
+</Table>
+
+<svg style="background-color:lightblue;" width="100%" height="200" viewbox="0 0 100 100" preserveAspectRatio="none">
+  <path id="wavepath" d="M0,0  L110,0C35,150 35,0 0,100z" fill="black" />
+</svg>
+ 
+  <Table style="background-color:lightblue;width:100%;height:200px;"><TR><TD align="center">
+
+</TD>
+</TR>
+</Table>
+
+<div class="sticker-1">
+<input type="text" id="input" oninput="startTest()" placeholder="Input Text here...">
+    <button onclick="stopTest()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Test</button>
+    <div id="result"></div>
+    <button id="reset" onclick="displayQuote();resetTest();" onclick="displayQuote()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reset</button>
+</div>
+
+<HR width="100%" align="center" size=7 color="blue"><BR>
+
+<marquee style="z-index:2;font-family:Comic Sans MS;font-size:20pt;color:blue;height:40px;scrollamount:50">
+RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp RIO-Education.000webhostapp.com &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+</marquee>
+
+</body>
+</html>
